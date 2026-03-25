@@ -10,15 +10,15 @@
 ::: code-group
 
 ```bash [pnpm]
-pnpm add @atom-ui/vue
+pnpm add @atomui-vue3/vue
 ```
 
 ```bash [npm]
-npm install @atom-ui/vue
+npm install @atomui-vue3/vue
 ```
 
 ```bash [yarn]
-yarn add @atom-ui/vue
+yarn add @atomui-vue3/vue
 ```
 
 :::
@@ -30,8 +30,8 @@ yarn add @atom-ui/vue
 ```ts
 // main.ts
 import { createApp } from "vue";
-import AtomUI from "@atom-ui/vue";
-import "@atom-ui/vue/style.css";
+import AtomUI from "@atomui-vue3/vue";
+import "@atomui-vue3/vue/style.css";
 import App from "./App.vue";
 
 const app = createApp(App);
@@ -44,8 +44,8 @@ app.mount("#app");
 ```ts
 // main.ts
 import { createApp } from "vue";
-import { AtomButton, AtomInput, AtomTabs, AtomModal } from "@atom-ui/vue";
-import "@atom-ui/vue/style.css";
+import { AtomButton, AtomInput, AtomTabs, AtomModal } from "@atomui-vue3/vue";
+import "@atomui-vue3/vue/style.css";
 import App from "./App.vue";
 
 const app = createApp(App);
