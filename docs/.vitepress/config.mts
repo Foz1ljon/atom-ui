@@ -3,7 +3,6 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
   vite: { plugins: [] },
-  outDir: "../dist-docs",
 
   themeConfig: {
     logo: "/logo.svg",
