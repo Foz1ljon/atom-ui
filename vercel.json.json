@@ -1,0 +1,4 @@
+{
+  "buildCommand": "cd docs && pnpm build",
+  "outputDirectory": "docs/.vitepress/dist"
+}
