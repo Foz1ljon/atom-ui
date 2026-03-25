@@ -11,7 +11,7 @@ hero:
       link: /en/guide/introduction
     - theme: alt
       text: GitHub
-      link: https://github.com/your-username/atom-ui
+      link: https://github.com/Foz1ljon/atom-ui
 
 features:
   - icon: 🧩
