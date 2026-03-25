@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      atomui-vue3:
+        specifier: link:..
+        version: link:..
     devDependencies:
       vitepress:
         specifier: ^1.6.4
