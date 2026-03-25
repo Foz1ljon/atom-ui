@@ -1,0 +1,65 @@
+{
+  "name": "@atom-ui/core",
+  "author": {
+    "name": "Foziljon",
+    "email": "coderf03@gmail.com",
+    "url": "https://github.com/Foz1ljon"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "version": "0.0.1",
+  "description": "Atom UI — Vue 3 component library",
+  "license": "MIT",
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./components/*": {
+      "import": "./dist/components/*/index.js",
+      "types": "./dist/components/*/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "ui",
+    "component-library",
+    "uzbekistan",
+    "tailwindcss",
+    "typescript",
+    "atom-ui"
+  ],
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/node": "^20.0.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vue/tsconfig": "^0.5.0",
+    "tailwindcss": "^4.2.2",
+    "typescript": "~5.4.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.9.1",
+    "vue": "^3.4.0",
+    "vue-tsc": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
