@@ -1,3 +1,5 @@
-// src/components/AtomButton/index.ts
-export { default as AtomButton } from "./AtomButton.vue";
-export type { AtomButtonProps } from "./types";
+import AtomButton from "./AtomButton.vue";
+
+export * from "./types";
+export { AtomButton };
+export default AtomButton;

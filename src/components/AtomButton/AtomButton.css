@@ -1,0 +1,225 @@
+.atom-btn {
+  --btn-bg: #2563eb;
+  --btn-color: #ffffff;
+  --btn-border: #2563eb;
+  --btn-hover-bg: #1d4ed8;
+  --btn-active-bg: #1e40af;
+  --btn-shadow: 0 8px 24px rgba(37, 99, 235, 0.18);
+  --btn-ripple: rgba(255, 255, 255, 0.22);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+  user-select: none;
+  outline: none;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 600;
+  line-height: 1;
+  transition:
+    background-color 0.28s ease,
+    color 0.28s ease,
+    border-color 0.28s ease,
+    transform 0.16s ease,
+    box-shadow 0.28s ease,
+    opacity 0.2s ease;
+  box-shadow: var(--btn-shadow);
+}
+
+.atom-btn:hover {
+  background: var(--btn-hover-bg);
+}
+
+.atom-btn:active {
+  background: var(--btn-active-bg);
+  transform: scale(0.985);
+}
+
+.atom-btn:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.18),
+    var(--btn-shadow);
+}
+
+.atom-btn--block {
+  width: 100%;
+}
+
+.atom-btn--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+.atom-btn--disabled:active {
+  transform: none;
+}
+
+.atom-btn__ripple-host {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.atom-btn__inner {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.atom-btn__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.atom-btn__icon,
+.atom-btn__loader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.atom-btn__spinner {
+  width: 1em;
+  height: 1em;
+  border-radius: 999px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: atom-btn-spin 0.7s linear infinite;
+}
+
+@keyframes atom-btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.atom-btn__ripple {
+  position: absolute;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    var(--btn-ripple) 0%,
+    rgba(255, 255, 255, 0.14) 45%,
+    rgba(255, 255, 255, 0) 72%
+  );
+  transform: scale(0.2);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: atom-btn-ripple 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes atom-btn-ripple {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Sizes */
+.atom-btn--sm {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+.atom-btn--md {
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.atom-btn--lg {
+  min-height: 46px;
+  padding: 0 20px;
+  font-size: 15px;
+}
+
+/* Radius */
+.atom-btn--rounded-sm {
+  border-radius: 8px;
+}
+
+.atom-btn--rounded-md {
+  border-radius: 12px;
+}
+
+.atom-btn--rounded-lg {
+  border-radius: 16px;
+}
+
+.atom-btn--rounded-full {
+  border-radius: 999px;
+}
+
+/* Variants */
+.atom-btn--primary {
+  --btn-bg: #2563eb;
+  --btn-color: #ffffff;
+  --btn-border: #2563eb;
+  --btn-hover-bg: #1d4ed8;
+  --btn-active-bg: #1e40af;
+  --btn-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+  --btn-ripple: rgba(255, 255, 255, 0.28);
+}
+
+.atom-btn--secondary {
+  --btn-bg: #f3f4f6;
+  --btn-color: #111827;
+  --btn-border: #e5e7eb;
+  --btn-hover-bg: #e5e7eb;
+  --btn-active-bg: #d1d5db;
+  --btn-shadow: 0 6px 18px rgba(17, 24, 39, 0.08);
+  --btn-ripple: rgba(17, 24, 39, 0.12);
+}
+
+.atom-btn--outline {
+  --btn-bg: #ffffff;
+  --btn-color: #2563eb;
+  --btn-border: #2563eb;
+  --btn-hover-bg: #eff6ff;
+  --btn-active-bg: #dbeafe;
+  --btn-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+  --btn-ripple: rgba(37, 99, 235, 0.14);
+}
+
+.atom-btn--ghost {
+  --btn-bg: transparent;
+  --btn-color: #111827;
+  --btn-border: transparent;
+  --btn-hover-bg: rgba(17, 24, 39, 0.06);
+  --btn-active-bg: rgba(17, 24, 39, 0.1);
+  --btn-shadow: none;
+  --btn-ripple: rgba(17, 24, 39, 0.1);
+}
+
+.atom-btn--danger {
+  --btn-bg: #dc2626;
+  --btn-color: #ffffff;
+  --btn-border: #dc2626;
+  --btn-hover-bg: #b91c1c;
+  --btn-active-bg: #991b1b;
+  --btn-shadow: 0 8px 20px rgba(220, 38, 38, 0.2);
+  --btn-ripple: rgba(255, 255, 255, 0.26);
+}
