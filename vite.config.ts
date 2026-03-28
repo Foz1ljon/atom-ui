@@ -1,7 +1,6 @@
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import tailwindcss from "@tailwindcss/vite";
 import dts from "vite-plugin-dts";
 import { resolve } from "path";
 import { readdirSync, statSync } from "fs";
@@ -16,7 +15,6 @@ const componentEntries = Object.fromEntries(
 
 export default defineConfig({
   plugins: [
-    tailwindcss(),
     vue(),
     dts({
       include: ["src"],
@@ -35,6 +33,7 @@ export default defineConfig({
         index: resolve(__dirname, "src/index.ts"),
         ...componentEntries,
       },
+
       formats: ["es"],
     },
     rollupOptions: {

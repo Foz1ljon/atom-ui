@@ -1,1 +1,41 @@
-@import "tailwindcss";
+:root {
+  --atom-color-primary: #2563eb;
+  --atom-color-primary-hover: #1d4ed8;
+  --atom-color-primary-active: #1e40af;
+  --atom-color-primary-ripple: rgba(255, 255, 255, 0.28);
+  --atom-color-primary-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+  --atom-color-primary-text: #ffffff;
+
+  --atom-color-secondary: #f3f4f6;
+  --atom-color-secondary-hover: #e5e7eb;
+  --atom-color-secondary-active: #d1d5db;
+  --atom-color-secondary-ripple: rgba(17, 24, 39, 0.12);
+  --atom-color-secondary-shadow: 0 6px 18px rgba(17, 24, 39, 0.08);
+  --atom-color-secondary-text: #111827;
+  --atom-color-secondary-border: #e5e7eb;
+
+  --atom-color-outline: #2563eb;
+  --atom-color-outline-hover: #eff6ff;
+  --atom-color-outline-active: #dbeafe;
+  --atom-color-outline-ripple: rgba(37, 99, 235, 0.14);
+  --atom-color-outline-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+  --atom-color-outline-text: #2563eb;
+  --atom-color-outline-bg: #ffffff;
+
+  --atom-color-ghost-text: #111827;
+  --atom-color-ghost-hover: rgba(17, 24, 39, 0.06);
+  --atom-color-ghost-active: rgba(17, 24, 39, 0.1);
+  --atom-color-ghost-ripple: rgba(17, 24, 39, 0.1);
+
+  --atom-color-danger: #dc2626;
+  --atom-color-danger-hover: #b91c1c;
+  --atom-color-danger-active: #991b1b;
+  --atom-color-danger-ripple: rgba(255, 255, 255, 0.26);
+  --atom-color-danger-shadow: 0 8px 20px rgba(220, 38, 38, 0.2);
+  --atom-color-danger-text: #ffffff;
+
+  --atom-radius-sm: 8px;
+  --atom-radius-md: 12px;
+  --atom-radius-lg: 16px;
+  --atom-radius-full: 999px;
+}
