@@ -1,98 +1,79 @@
-# Atom UI
+# Introduction
 
-**Atom UI** — bu Vue 3 uchun yaratilgan yengil, tezkor va qayta foydalanish mumkin bo‘lgan (reusable) komponentlar kutubxonasi.
+**Atom UI** is a lightweight, fast, and reusable Vue 3 component library.
 
-Uning asosiy maqsadi — murakkab UI kutubxonalardan farqli ravishda minimal, tushunarli va to‘liq nazorat qilinadigan komponentlar orqali tez rivojlanadigan (scalable) frontend ilovalar yaratishga yordam berish.
-
----
-
-## 🚀 Nima uchun Atom UI?
-
-Zamonaviy frontend loyihalarda ko‘pincha quyidagi muammolar uchraydi:
-
-- UI librarylar juda og‘ir va ortiqcha funksiyalar bilan to‘lib ketgan
-- Customizatsiya qilish qiyin
-- Performance pastlashadi
-- Kod nazorati yo‘qoladi
-
-**Atom UI** aynan shu muammolarni hal qilish uchun yaratilgan.
+Its goal is to provide minimal, predictable, and fully controllable components that help you build scalable frontend applications — without the overhead of large UI frameworks.
 
 ---
 
-## ⚡ Asosiy xususiyatlar
+## Why Atom UI?
 
-### 🧩 Reusable komponentlar
+Modern frontend projects often run into the same problems:
 
-Har bir component qayta foydalanish uchun mo‘ljallangan. Siz ularni istalgan loyihada osongina ishlata olasiz.
+- UI libraries are bloated with features you never use
+- Customization is painful or requires overriding deep CSS
+- Performance degrades as the bundle grows
+- You lose control over how components actually behave
 
-### ⚡ Yengil va tez
-
-Minimal dependency va optimallashtirilgan build sababli komponentlar juda tez ishlaydi.
-
-### 🎨 To‘liq customizatsiya
-
-TailwindCSS asosida qurilgan — istalgan dizaynni oson moslashtirish mumkin.
-
-### 🧠 Developer-friendly
-
-Oddiy API, tushunarli props va slotlar orqali developer experience maksimal darajada qulay.
-
-### 📦 Tree-shakable
-
-Faqat ishlatilgan komponentlar bundlega tushadi — ortiqcha kod yuklanmaydi.
-
-### 🔌 TypeScript qo‘llab-quvvatlash
-
-To‘liq type safety bilan ishlaydi, bu esa xatolarni oldindan aniqlashga yordam beradi.
+**Atom UI** was built specifically to solve these problems.
 
 ---
 
-## 🏗 Qayerlarda ishlatish mumkin?
+## Core Features
 
-Atom UI quyidagi loyihalar uchun juda mos:
+### Reusable Components
 
-- Admin dashboardlar
-- SaaS platformalar
-- CRM / ERP tizimlar
-- POS (Point of Sale) tizimlar
-- Custom biznes ilovalar
+Every component is designed for reuse. Drop them into any project and they work immediately with sensible defaults and a clean API.
 
----
+### Lightweight & Fast
 
-## 🎯 Maqsad
+Minimal dependencies and an optimized build pipeline keep your bundle small and your app responsive.
 
-Atom UI ning asosiy maqsadi:
+### Fully Customizable
 
-> **Minimal, tez va boshqariladigan UI komponentlar orqali developerga to‘liq erkinlik berish**
+Built on CSS custom properties and SCSS — adapt any component to your design system without fighting the library.
 
-Bu kutubxona sizga:
+### Developer Friendly
 
-- ortiqcha abstractionlarsiz ishlash
-- performance’ni saqlash
-- kod ustidan to‘liq nazorat qilish
+Simple props, named slots, and consistent conventions across every component. No surprises.
 
-imkonini beradi.
+### Tree-shakable
 
----
+Only the components you import are included in your bundle. Unused components add zero bytes.
 
-## 🔥 Kimlar uchun?
+### TypeScript Support
 
-- Vue 3 developerlar
-- Custom UI yozishni xohlaydiganlar
-- Performance muhim bo‘lgan loyihalar
-- UI librarydan charchagan developerlar 🙂
+Every component ships with full type definitions — props, emits, and slot types are all covered.
 
 ---
 
-## 📌 Xulosa
+## When to Use Atom UI
 
-Agar sizga:
+Atom UI is a great fit for:
 
-- yengil
-- tez
-- reusable
-- va to‘liq nazorat qilinadigan
-
-UI komponentlar kerak bo‘lsa — **Atom UI aynan siz uchun**.
+- Admin dashboards
+- SaaS platforms
+- CRM / ERP systems
+- Point-of-sale applications
+- Any custom business tool
 
 ---
+
+## Design Philosophy
+
+> **Give developers full control through minimal, fast, and predictable components.**
+
+Atom UI avoids:
+
+- Unnecessary abstractions that hide what's really happening
+- Opinionated theming that fights your design
+- Feature bloat that inflates your bundle
+
+---
+
+## Who Is It For?
+
+- Vue 3 developers who want UI components without magic
+- Teams that care about performance and bundle size
+- Developers who need to match a custom design system
+- Anyone tired of fighting their UI library

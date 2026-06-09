@@ -1,0 +1,170 @@
+@use "../../styles/variables" as *;
+
+.atom-tooltip {
+  position: relative;
+  display: inline-flex;
+
+  &__box {
+    position: absolute;
+    z-index: $z-tooltip;
+    padding: 6px 10px;
+    border-radius: $radius-md;
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: nowrap;
+    pointer-events: none;
+    max-width: 260px;
+    word-break: break-word;
+    white-space: normal;
+
+    // Arrow base
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+
+    // Dark theme (default)
+    &--dark {
+      background: rgba(#1a1a2e, 0.88);
+      color: $color-white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+      &::after { /* arrows set per placement */ }
+    }
+
+    // Light theme
+    &--light {
+      background: $color-white;
+      color: $color-gray-800;
+      border: 1px solid $color-gray-200;
+      box-shadow: $shadow-md;
+    }
+
+    // Placements
+    &--top {
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      &::after {
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid rgba(#1a1a2e, 0.88);
+      }
+      &.atom-tooltip__box--light::after { border-top-color: $color-gray-200; }
+    }
+
+    &--top-start {
+      bottom: calc(100% + 8px);
+      left: 0;
+      &::after {
+        top: 100%;
+        left: 12px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid rgba(#1a1a2e, 0.88);
+      }
+      &.atom-tooltip__box--light::after { border-top-color: $color-gray-200; }
+    }
+
+    &--top-end {
+      bottom: calc(100% + 8px);
+      right: 0;
+      &::after {
+        top: 100%;
+        right: 12px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid rgba(#1a1a2e, 0.88);
+      }
+      &.atom-tooltip__box--light::after { border-top-color: $color-gray-200; }
+    }
+
+    &--bottom {
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      &::after {
+        bottom: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid rgba(#1a1a2e, 0.88);
+      }
+      &.atom-tooltip__box--light::after { border-bottom-color: $color-gray-200; }
+    }
+
+    &--bottom-start {
+      top: calc(100% + 8px);
+      left: 0;
+      &::after {
+        bottom: 100%;
+        left: 12px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid rgba(#1a1a2e, 0.88);
+      }
+      &.atom-tooltip__box--light::after { border-bottom-color: $color-gray-200; }
+    }
+
+    &--bottom-end {
+      top: calc(100% + 8px);
+      right: 0;
+      &::after {
+        bottom: 100%;
+        right: 12px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid rgba(#1a1a2e, 0.88);
+      }
+      &.atom-tooltip__box--light::after { border-bottom-color: $color-gray-200; }
+    }
+
+    &--left {
+      right: calc(100% + 8px);
+      top: 50%;
+      transform: translateY(-50%);
+      &::after {
+        left: 100%;
+        top: 50%;
+        margin-top: -5px;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid rgba(#1a1a2e, 0.88);
+      }
+      &.atom-tooltip__box--light::after { border-left-color: $color-gray-200; }
+    }
+
+    &--right {
+      left: calc(100% + 8px);
+      top: 50%;
+      transform: translateY(-50%);
+      &::after {
+        right: 100%;
+        top: 50%;
+        margin-top: -5px;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid rgba(#1a1a2e, 0.88);
+      }
+      &.atom-tooltip__box--light::after { border-right-color: $color-gray-200; }
+    }
+  }
+}
+
+// Tooltip fade transition
+.atom-tooltip-enter-active,
+.atom-tooltip-leave-active {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.atom-tooltip-enter-from,
+.atom-tooltip-leave-to {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.9);
+}

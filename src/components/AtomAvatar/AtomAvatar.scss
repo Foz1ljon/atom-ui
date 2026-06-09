@@ -1,0 +1,95 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.atom-avatar {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  user-select: none;
+
+  &__img,
+  &__initials,
+  &__placeholder {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+
+  &__img {
+    object-fit: cover;
+  }
+
+  &__initials {
+    @include flex-center;
+    background: var(--avatar-bg, #{$color-primary});
+    color: $color-white;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &__placeholder {
+    @include flex-center;
+    background: $color-gray-100;
+    color: $color-gray-400;
+  }
+
+  &__status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: $radius-full;
+    border: 2px solid $color-white;
+
+    &--online  { background: $color-success; }
+    &--offline { background: $color-gray-300; }
+    &--busy    { background: $color-danger; }
+    &--away    { background: $color-warning; }
+  }
+
+  // Sizes
+  &--xs {
+    width: 24px;
+    height: 24px;
+
+    .atom-avatar__initials { font-size: 10px; }
+    .atom-avatar__status   { width: 7px; height: 7px; }
+  }
+
+  &--sm {
+    width: 32px;
+    height: 32px;
+
+    .atom-avatar__initials { font-size: $font-xs; }
+    .atom-avatar__status   { width: 9px; height: 9px; }
+  }
+
+  &--md {
+    width: 40px;
+    height: 40px;
+
+    .atom-avatar__initials { font-size: $font-md; }
+    .atom-avatar__status   { width: 11px; height: 11px; }
+  }
+
+  &--lg {
+    width: 52px;
+    height: 52px;
+
+    .atom-avatar__initials { font-size: $font-lg; }
+    .atom-avatar__status   { width: 13px; height: 13px; }
+  }
+
+  &--xl {
+    width: 68px;
+    height: 68px;
+
+    .atom-avatar__initials { font-size: $font-xl; }
+    .atom-avatar__status   { width: 15px; height: 15px; }
+  }
+
+  // Shapes
+  &--circle  { border-radius: $radius-full; }
+  &--square  { border-radius: $radius-sm; }
+}

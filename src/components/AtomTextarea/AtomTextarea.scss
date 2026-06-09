@@ -1,0 +1,108 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.atom-textarea {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+
+  &__label {
+    display: block;
+    font-size: $font-sm;
+    font-weight: 500;
+    color: $color-gray-700;
+    line-height: 1.4;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    background: $color-white;
+    border: 1.5px solid $color-gray-200;
+    border-radius: $radius-md;
+    transition:
+      border-color $transition-base,
+      box-shadow $transition-base;
+
+    &:focus-within {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.12);
+    }
+
+    &--error {
+      border-color: $color-danger;
+
+      &:focus-within {
+        border-color: $color-danger;
+        box-shadow: 0 0 0 3px rgba($color-danger, 0.12);
+      }
+    }
+
+    &--disabled {
+      background: $color-gray-50;
+      cursor: not-allowed;
+
+      .atom-textarea__field {
+        cursor: not-allowed;
+        color: $color-gray-400;
+      }
+    }
+
+    // Sizes
+    &--sm .atom-textarea__field { padding: 8px 10px; font-size: $font-sm; }
+    &--md .atom-textarea__field { padding: 10px 14px; font-size: $font-md; }
+    &--lg .atom-textarea__field { padding: 12px 16px; font-size: $font-lg; }
+  }
+
+  &__field {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: $color-gray-900;
+    font-family: inherit;
+    line-height: 1.6;
+    resize: vertical;
+    border-radius: inherit;
+
+    &::placeholder { color: $color-gray-400; }
+
+    &[readonly] { cursor: default; }
+
+    &--resize-none { resize: none; }
+    &--resize-vertical { resize: vertical; }
+    &--resize-horizontal { resize: horizontal; }
+    &--resize-both { resize: both; }
+    &--autosize { resize: none; overflow: hidden; }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    min-height: 16px;
+  }
+
+  &__count {
+    margin-left: auto;
+    font-size: $font-xs;
+    color: $color-gray-400;
+    white-space: nowrap;
+  }
+
+  &__hint {
+    font-size: $font-xs;
+    color: $color-gray-500;
+    line-height: 1.4;
+  }
+
+  &__error {
+    font-size: $font-xs;
+    color: $color-danger;
+    line-height: 1.4;
+  }
+}

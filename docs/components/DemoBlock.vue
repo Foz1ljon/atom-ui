@@ -1,21 +1,8 @@
 <script setup lang="ts">
 defineProps<{
-  code: string;
   title?: string;
+  code?: string;
 }>();
-
-async function copyCode() {
-  try {
-    await navigator.clipboard.writeText(props.code);
-    copied.value = true;
-
-    setTimeout(() => {
-      copied.value = false;
-    }, 1500);
-  } catch (error) {
-    console.error("Copy failed:", error);
-  }
-}
 </script>
 
 <template>
@@ -26,51 +13,78 @@ async function copyCode() {
       <slot />
     </div>
 
-    <details class="demo-block__details">
-      <summary class="demo-block__summary">Code</summary>
+    <!-- Named slot (new pattern: markdown code fences) -->
+    <details v-if="$slots.code" class="demo-block__details">
+      <summary class="demo-block__summary">View code</summary>
+      <div class="demo-block__code-slot">
+        <slot name="code" />
+      </div>
+    </details>
 
+    <!-- Code prop (legacy pattern: raw string) -->
+    <details v-else-if="code" class="demo-block__details">
+      <summary class="demo-block__summary">View code</summary>
       <pre class="demo-block__pre"><code>{{ code }}</code></pre>
     </details>
   </div>
 </template>
 
-<style module>
+<style scoped>
 .demo-block {
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
   overflow: hidden;
-  margin: 16px 0;
-  background: #fff;
+  margin: 16px 0 24px;
+  background: var(--vp-c-bg);
 }
 
 .demo-block__title {
-  padding: 12px 16px;
+  padding: 10px 16px;
   font-weight: 600;
-  border-bottom: 1px solid #e5e7eb;
-  background: #fafafa;
+  font-size: 13px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
 }
 
 .demo-block__preview {
-  padding: 20px;
+  padding: 24px 20px;
 }
 
 .demo-block__details {
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--vp-c-divider);
 }
 
 .demo-block__summary {
   cursor: pointer;
-  padding: 12px 16px;
+  padding: 10px 16px;
+  font-size: 13px;
   font-weight: 500;
   user-select: none;
-  background: #fafafa;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.demo-block__summary::before {
+  content: "</>";
+  font-family: monospace;
+  opacity: 0.6;
+}
+
+.demo-block__code-slot :deep(div[class*="language-"]) {
+  margin: 0;
+  border-radius: 0;
 }
 
 .demo-block__pre {
   margin: 0;
   padding: 16px;
   overflow: auto;
-  background: #0f172a;
+  background: var(--vp-code-block-bg, #0f172a);
   color: #e2e8f0;
   font-size: 13px;
   line-height: 1.6;

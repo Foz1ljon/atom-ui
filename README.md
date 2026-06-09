@@ -36,7 +36,7 @@ Unlike traditional UI libraries, Atom UI focuses on:
 
 - 🧩 **Reusable Components** — build once, use everywhere
 - ⚡ **Lightweight & Fast** — optimized for performance
-- 🎨 **Fully Customizable** — TailwindCSS-friendly structure
+- 🎨 **Fully Customizable** — CSS-friendly structure
 - 🧠 **Developer Friendly** — clean API with clear props & slots
 - 📦 **Tree-shakable** — only used components are bundled
 - 🔒 **TypeScript Support** — strong type safety

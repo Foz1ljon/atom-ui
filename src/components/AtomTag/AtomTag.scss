@@ -1,0 +1,134 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.atom-tag {
+  @include inline-flex-center;
+  gap: 5px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  border: 1.5px solid transparent;
+  transition:
+    background-color $transition-fast,
+    opacity $transition-fast;
+
+  &--sm {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: $radius-xs;
+
+    .atom-tag__close { width: 12px; height: 12px; }
+  }
+
+  &--md {
+    font-size: $font-xs;
+    padding: 4px 10px;
+    border-radius: $radius-sm;
+
+    .atom-tag__close { width: 14px; height: 14px; }
+  }
+
+  &--lg {
+    font-size: $font-sm;
+    padding: 5px 12px;
+    border-radius: $radius-sm;
+
+    .atom-tag__close { width: 16px; height: 16px; }
+  }
+
+  &--pill { border-radius: $radius-full; }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &__close {
+    @include inline-flex-center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.65;
+    padding: 0;
+    border-radius: $radius-full;
+    margin-left: 2px;
+    flex-shrink: 0;
+    transition: opacity $transition-fast;
+
+    &:hover { opacity: 1; }
+
+    svg { display: block; }
+  }
+
+  // Solid variants
+  &--primary {
+    background: rgba($color-primary, 0.1);
+    color: $color-primary;
+    border-color: rgba($color-primary, 0.2);
+
+    &.atom-tag--outline {
+      background: transparent;
+      border-color: $color-primary;
+    }
+  }
+
+  &--secondary {
+    background: $color-gray-100;
+    color: $color-gray-600;
+    border-color: $color-gray-200;
+
+    &.atom-tag--outline {
+      background: transparent;
+      border-color: $color-gray-400;
+    }
+  }
+
+  &--success {
+    background: $color-success-light;
+    color: $color-success-text-dark;
+    border-color: $color-success-border;
+
+    &.atom-tag--outline {
+      background: transparent;
+      border-color: $color-success;
+      color: $color-success;
+    }
+  }
+
+  &--warning {
+    background: $color-warning-light;
+    color: $color-warning-text-dark;
+    border-color: $color-warning-border;
+
+    &.atom-tag--outline {
+      background: transparent;
+      border-color: $color-warning;
+      color: $color-warning;
+    }
+  }
+
+  &--danger {
+    background: $color-danger-light;
+    color: $color-danger-text-dark;
+    border-color: $color-danger-border;
+
+    &.atom-tag--outline {
+      background: transparent;
+      border-color: $color-danger;
+      color: $color-danger;
+    }
+  }
+
+  &--info {
+    background: $color-info-light;
+    color: $color-info-text-dark;
+    border-color: $color-info-border;
+
+    &.atom-tag--outline {
+      background: transparent;
+      border-color: $color-info;
+      color: $color-info;
+    }
+  }
+}

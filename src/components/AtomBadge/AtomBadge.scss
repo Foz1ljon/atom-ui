@@ -1,0 +1,87 @@
+@use 'sass:list';
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+$badge-variants: (
+  primary:   ($color-primary, $color-primary-text, rgba($color-primary, 0.1), $color-primary),
+  secondary: ($color-gray-200, $color-gray-700, $color-gray-100, $color-gray-300),
+  success:   ($color-success, $color-success-text, $color-success-light, $color-success-border),
+  warning:   ($color-warning, $color-warning-text, $color-warning-light, $color-warning-border),
+  danger:    ($color-danger, $color-danger-text, $color-danger-light, $color-danger-border),
+  info:      ($color-info, $color-info-text, $color-info-light, $color-info-border),
+);
+
+.atom-badge {
+  @include inline-flex-center;
+  gap: 5px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  border: 1.5px solid transparent;
+  transition:
+    background-color $transition-fast,
+    color $transition-fast;
+
+  // Sizes
+  &--sm {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: $radius-xs;
+  }
+
+  &--md {
+    font-size: $font-xs;
+    padding: 4px 10px;
+    border-radius: $radius-sm;
+  }
+
+  &--lg {
+    font-size: $font-sm;
+    padding: 5px 12px;
+    border-radius: $radius-sm;
+  }
+
+  &--pill {
+    border-radius: $radius-full;
+  }
+
+  // Dot
+  &__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: $radius-full;
+    background: currentColor;
+    flex-shrink: 0;
+  }
+
+  // Dot-only mode
+  &--dot-only {
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: $radius-full;
+    border: none;
+  }
+
+  // Variants (solid)
+  @each $name, $vals in $badge-variants {
+    &--#{$name} {
+      background: list.nth($vals, 1);
+      color: list.nth($vals, 2);
+      border-color: list.nth($vals, 1);
+    }
+
+    &--#{$name}.atom-badge--outline {
+      background: list.nth($vals, 3);
+      color: list.nth($vals, 1);
+      border-color: list.nth($vals, 4);
+    }
+  }
+
+  // secondary solid override
+  &--secondary {
+    background: $color-gray-100;
+    color: $color-gray-700;
+    border-color: $color-gray-200;
+  }
+}

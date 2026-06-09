@@ -1,0 +1,111 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.atom-pagination {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: $font-sm;
+  user-select: none;
+
+  &--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &__btn {
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid $color-gray-300;
+    border-radius: $radius-md;
+    background: $color-white;
+    color: $color-gray-700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-base;
+    font-size: $font-sm;
+    line-height: 1;
+
+    &:hover:not(:disabled) {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    &--active {
+      background: $color-primary;
+      border-color: $color-primary;
+      color: $color-white;
+      font-weight: 600;
+
+      &:hover { background: $color-primary-hover; border-color: $color-primary-hover; color: $color-white; }
+    }
+
+    &--ellipsis {
+      border-color: transparent;
+      background: transparent;
+      cursor: default;
+      letter-spacing: 1px;
+      color: $color-gray-400;
+
+      &:hover { border-color: transparent; color: $color-gray-400; }
+    }
+  }
+
+  &__total {
+    color: $color-gray-500;
+    white-space: nowrap;
+  }
+
+  &__sizer {
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid $color-gray-300;
+    border-radius: $radius-md;
+    background: $color-white;
+    color: $color-gray-700;
+    font-size: $font-sm;
+    cursor: pointer;
+    outline: none;
+    transition: border-color $transition-base;
+
+    &:focus { border-color: $color-primary; }
+  }
+
+  &__jumper {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: $color-gray-500;
+    font-size: $font-sm;
+
+    input {
+      width: 50px;
+      height: 32px;
+      text-align: center;
+      border: 1px solid $color-gray-300;
+      border-radius: $radius-md;
+      font-size: $font-sm;
+      outline: none;
+      transition: border-color $transition-base;
+
+      &:focus { border-color: $color-primary; }
+    }
+  }
+
+  &__simple {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    span { color: $color-gray-500; font-size: $font-sm; }
+  }
+}

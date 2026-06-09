@@ -1,0 +1,84 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.atom-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: $radius-md;
+  border-left: 4px solid transparent;
+  position: relative;
+  font-size: $font-md;
+
+  &--info {
+    background: $color-info-light;
+    border-color: $color-info;
+    color: $color-info-text-dark;
+
+    .atom-alert__icon { color: $color-info; }
+  }
+
+  &--success {
+    background: $color-success-light;
+    border-color: $color-success;
+    color: $color-success-text-dark;
+
+    .atom-alert__icon { color: $color-success; }
+  }
+
+  &--warning {
+    background: $color-warning-light;
+    border-color: $color-warning;
+    color: $color-warning-text-dark;
+
+    .atom-alert__icon { color: $color-warning; }
+  }
+
+  &--danger {
+    background: $color-danger-light;
+    border-color: $color-danger;
+    color: $color-danger-text-dark;
+
+    .atom-alert__icon { color: $color-danger; }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 2px;
+  }
+
+  &__content {
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+
+  &__close {
+    @include inline-flex-center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    opacity: 0.5;
+    padding: 2px;
+    border-radius: $radius-xs;
+    flex-shrink: 0;
+    transition: opacity $transition-fast;
+    margin-top: 1px;
+
+    &:hover { opacity: 1; }
+
+    svg { display: block; }
+  }
+}

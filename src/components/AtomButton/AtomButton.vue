@@ -7,7 +7,7 @@ import type {
   AtomButtonRounded,
   AtomButtonEmits,
 } from "./types";
-import "./AtomButton.css";
+import "./AtomButton.scss";
 
 const props = withDefaults(defineProps<AtomButtonProps>(), {
   variant: "primary",

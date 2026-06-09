@@ -1,0 +1,63 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.atom-card {
+  background: $color-white;
+  overflow: hidden;
+  position: relative;
+
+  // Radius
+  &--radius-sm { border-radius: $radius-sm; }
+  &--radius-md { border-radius: $radius-md; }
+  &--radius-lg { border-radius: $radius-lg; }
+
+  // Shadow
+  &--shadow-none { box-shadow: none; }
+  &--shadow-sm   { box-shadow: $shadow-sm; }
+  &--shadow-md   { box-shadow: $shadow-md; }
+  &--shadow-lg   { box-shadow: $shadow-lg; }
+
+  // Bordered
+  &--bordered {
+    border: 1px solid $color-gray-200;
+  }
+
+  // Hoverable
+  &--hoverable {
+    cursor: pointer;
+    transition: box-shadow $transition-base, transform $transition-base;
+
+    &:hover {
+      box-shadow: $shadow-lg;
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  // Slots
+  &__header {
+    padding: 16px 20px;
+    border-bottom: 1px solid $color-gray-100;
+    font-weight: 600;
+    font-size: $font-lg;
+    color: $color-gray-900;
+    @include flex-between;
+  }
+
+  &__body {
+    &--padding-none { padding: 0; }
+    &--padding-sm   { padding: 12px 16px; }
+    &--padding-md   { padding: 20px; }
+    &--padding-lg   { padding: 28px 32px; }
+  }
+
+  &__footer {
+    padding: 14px 20px;
+    border-top: 1px solid $color-gray-100;
+    background: $color-gray-50;
+  }
+}

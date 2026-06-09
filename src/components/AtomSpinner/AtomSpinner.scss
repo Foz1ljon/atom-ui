@@ -1,0 +1,41 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.atom-spinner {
+  @include inline-flex-center;
+  flex-direction: column;
+  gap: 8px;
+
+  &__ring {
+    border-radius: $radius-full;
+    border-style: solid;
+    border-right-color: transparent !important;
+    animation: atom-spin 0.75s linear infinite;
+    flex-shrink: 0;
+  }
+
+  &__label {
+    font-size: $font-sm;
+    color: $color-gray-500;
+    line-height: 1;
+  }
+
+  // Sizes
+  &--xs .atom-spinner__ring { width: 14px; height: 14px; border-width: 2px; }
+  &--sm .atom-spinner__ring { width: 18px; height: 18px; border-width: 2px; }
+  &--md .atom-spinner__ring { width: 24px; height: 24px; border-width: 2.5px; }
+  &--lg .atom-spinner__ring { width: 32px; height: 32px; border-width: 3px; }
+  &--xl .atom-spinner__ring { width: 44px; height: 44px; border-width: 3.5px; }
+
+  // Variants
+  &--primary   .atom-spinner__ring { border-color: $color-primary; }
+  &--secondary .atom-spinner__ring { border-color: $color-gray-400; }
+  &--success   .atom-spinner__ring { border-color: $color-success; }
+  &--warning   .atom-spinner__ring { border-color: $color-warning; }
+  &--danger    .atom-spinner__ring { border-color: $color-danger; }
+  &--white     .atom-spinner__ring { border-color: $color-white; }
+}
+
+@keyframes atom-spin {
+  to { transform: rotate(360deg); }
+}

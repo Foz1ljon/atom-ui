@@ -1,0 +1,154 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.atom-table {
+  width: 100%;
+  overflow: auto;
+  border-radius: $radius-md;
+  font-size: $font-sm;
+
+  &--bordered {
+    border: 1px solid $color-gray-200;
+  }
+
+  &__inner {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+  }
+
+  // Header
+  &__thead {
+    background: $color-gray-50;
+  }
+
+  &__th {
+    padding: 10px 14px;
+    font-weight: 600;
+    color: $color-gray-600;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 1px solid $color-gray-200;
+    position: relative;
+
+    &--center {
+      text-align: center;
+    }
+    &--right {
+      text-align: right;
+    }
+
+    &--sortable {
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__sort-icon {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-left: 6px;
+    vertical-align: middle;
+
+    span {
+      width: 0;
+      height: 0;
+      display: block;
+
+      &.up {
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 5px solid $color-gray-300;
+
+        &.active {
+          border-bottom-color: $color-primary;
+        }
+      }
+
+      &.down {
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid $color-gray-300;
+
+        &.active {
+          border-top-color: $color-primary;
+        }
+      }
+    }
+  }
+
+  // Body
+  &__tbody {
+    
+  }
+
+  &__tr {
+    transition: background $transition-fast;
+    border-bottom: 1px solid $color-gray-100;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &--striped &__tr:nth-child(odd) {
+    background: $color-gray-50;
+  }
+
+  &--hoverable &__tr:hover {
+    background: rgba($color-primary, 0.04);
+  }
+
+  &--row-clickable &__tr {
+    cursor: pointer;
+  }
+
+  &__td {
+    padding: 10px 14px;
+    color: $color-gray-800;
+    vertical-align: middle;
+
+    &--center {
+      text-align: center;
+    }
+    &--right {
+      text-align: right;
+    }
+  }
+
+  // Bordered cells
+  &--bordered &__th,
+  &--bordered &__td {
+    border-right: 1px solid $color-gray-200;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  // Sizes
+  &--sm &__th,
+  &--sm &__td {
+    padding: 6px 10px;
+    font-size: $font-xs;
+  }
+
+  &--lg &__th,
+  &--lg &__td {
+    padding: 14px 18px;
+    font-size: $font-md;
+  }
+
+  // Empty
+  &__empty {
+    padding: 40px;
+    text-align: center;
+    color: $color-gray-400;
+    font-size: $font-sm;
+  }
+}

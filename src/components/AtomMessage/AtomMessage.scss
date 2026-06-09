@@ -1,0 +1,94 @@
+@use "../../styles/variables" as *;
+
+.atom-message-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: $z-modal + 100;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  pointer-events: none;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+}
+
+.atom-message {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: $radius-md;
+  background: $color-white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.06);
+  font-size: $font-sm;
+  color: $color-gray-800;
+  min-width: 240px;
+  max-width: 480px;
+  border-left: 4px solid transparent;
+
+  &--info    { border-left-color: $color-info; }
+  &--success { border-left-color: $color-success; }
+  &--warning { border-left-color: $color-warning; }
+  &--error   { border-left-color: $color-danger; }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg { display: block; }
+  }
+
+  &--info &__icon    { color: $color-info; }
+  &--success &__icon { color: $color-success; }
+  &--warning &__icon { color: $color-warning; }
+  &--error &__icon   { color: $color-danger; }
+
+  &__content {
+    flex: 1;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+
+  &__close {
+    flex-shrink: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: $color-gray-400;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color $transition-base;
+
+    &:hover { color: $color-gray-700; }
+  }
+}
+
+// Transition
+.atom-message-move,
+.atom-message-enter-active,
+.atom-message-leave-active {
+  transition: all 0.3s ease;
+}
+
+.atom-message-enter-from {
+  opacity: 0;
+  transform: translateY(-16px);
+}
+
+.atom-message-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.atom-message-leave-active {
+  position: absolute;
+}

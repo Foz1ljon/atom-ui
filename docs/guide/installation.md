@@ -1,11 +1,13 @@
-# O'rnatish
+# Installation
 
-## Talablar
+## Requirements
 
-- **Node.js** 16.0.0 va undan yuqori
-- **Vue** 3.0.0 va undan yuqori
+- **Node.js** >= 16.0.0
+- **Vue** >= 3.0.0
 
-## O'rnatish
+---
+
+## Install the Package
 
 ::: code-group
 
@@ -23,9 +25,11 @@ yarn add atomui-vue3
 
 :::
 
-## Ulash
+---
 
-### To'liq ulash
+## Global Registration
+
+Register all components at once using the Vue plugin:
 
 ```ts
 // main.ts
@@ -39,24 +43,49 @@ app.use(AtomUI);
 app.mount("#app");
 ```
 
-### Alohida komponentlarni ulash
+---
+
+## Individual Registration
+
+Import only the components you need for the smallest possible bundle:
 
 ```ts
 // main.ts
 import { createApp } from "vue";
-import { AtomButton, AtomInput, AtomTabs, AtomModal } from "atomui-vue3";
+import { AtomButton, AtomInput, AtomSelect } from "atomui-vue3";
 import "atomui-vue3/style.css";
 import App from "./App.vue";
 
 const app = createApp(App);
 app.component("AtomButton", AtomButton);
 app.component("AtomInput", AtomInput);
-app.component("AtomTabs", AtomTabs);
-app.component("AtomModal", AtomModal);
+app.component("AtomSelect", AtomSelect);
 app.mount("#app");
 ```
 
-## Vite bilan ishlatish
+---
+
+## Import on Demand (Recommended)
+
+Import directly in your components for the best tree-shaking:
+
+```vue
+<script setup lang="ts">
+import { AtomButton, AtomInput } from "atomui-vue3";
+import "atomui-vue3/style.css";
+</script>
+
+<template>
+  <AtomInput v-model="name" placeholder="Your name" />
+  <AtomButton @click="submit">Submit</AtomButton>
+</template>
+```
+
+---
+
+## Vite Configuration
+
+No special configuration needed. Atom UI works out of the box with Vite:
 
 ```ts
 // vite.config.ts
@@ -68,12 +97,14 @@ export default defineConfig({
 });
 ```
 
-## Tayyor!
+---
 
-O'rnatish muvaffaqiyatli tugadi. Endi komponentlardan foydalanishingiz mumkin:
+## You're Ready
+
+Start using components immediately:
 
 ```vue
 <template>
-  <AtomButton>Salom Atom UI!</AtomButton>
+  <AtomButton variant="primary">Hello, Atom UI!</AtomButton>
 </template>
 ```
