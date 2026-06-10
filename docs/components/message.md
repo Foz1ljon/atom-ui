@@ -44,8 +44,8 @@ Global toast notifications via `useMessage()`. Place `<AtomMessage />` once in y
 
 ```vue
 <script setup>
-import { useMessage } from 'atomui-vue3'
-const msg = useMessage()
+  import { useMessage } from "atomui-vue3";
+  const msg = useMessage();
 </script>
 <template>
   <AtomButton @click="msg.info('Info message')">Info</AtomButton>
@@ -70,9 +70,9 @@ const msg = useMessage()
   <template #code>
 
 ```js
-msg.info('1 second', 1000)         // disappears after 1s
-msg.warning('Stays until closed', 0) // must be closed manually
-msg.clear()                          // remove all messages
+msg.info("1 second", 1000); // disappears after 1s
+msg.warning("Stays until closed", 0); // must be closed manually
+msg.clear(); // remove all messages
 ```
 
   </template>
@@ -88,9 +88,9 @@ msg.clear()                          // remove all messages
   <template #code>
 
 ```js
-const id = msg.info('Loading...', 0) // persistent
-msg.remove(id)                        // remove by id
-msg.success('Done!')
+const id = msg.info("Loading...", 0); // persistent
+msg.remove(id); // remove by id
+msg.success("Done!");
 ```
 
   </template>
@@ -98,13 +98,13 @@ msg.success('Done!')
 
 ## `useMessage()` API
 
-| Method | Returns | Description |
-|--------|---------|-------------|
-| `info(content, duration?)` | `number` | Show info toast |
+| Method                        | Returns  | Description        |
+| ----------------------------- | -------- | ------------------ |
+| `info(content, duration?)`    | `number` | Show info toast    |
 | `success(content, duration?)` | `number` | Show success toast |
 | `warning(content, duration?)` | `number` | Show warning toast |
-| `error(content, duration?)` | `number` | Show error toast |
-| `remove(id)` | `void` | Remove by id |
-| `clear()` | `void` | Remove all |
+| `error(content, duration?)`   | `number` | Show error toast   |
+| `remove(id)`                  | `void`   | Remove by id       |
+| `clear()`                     | `void`   | Remove all         |
 
 Default duration: **3000ms**. Pass `0` for persistent.

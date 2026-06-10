@@ -153,21 +153,21 @@ const sizesCode = `<AtomSelect v-model="v" :options="options" size="sm" placehol
 
 ## Props
 
-| Prop           | Type                                  | Default             | Description                     |
-| -------------- | ------------------------------------- | ------------------- | ------------------------------- |
-| `modelValue`   | `string \| number \| array \| null`   | —                   | v-model value                   |
-| `options`      | `AtomSelectOption[]`                  | `[]`                | List of options                 |
-| `size`         | `'sm' \| 'md' \| 'lg'`               | `'md'`              | Select size                     |
-| `placeholder`  | `string`                              | `'Select...'`       | Placeholder text                |
-| `label`        | `string`                              | —                   | Field label                     |
-| `hint`         | `string`                              | —                   | Helper text                     |
-| `disabled`     | `boolean`                             | `false`             | Disable the select              |
-| `clearable`    | `boolean`                             | `false`             | Show clear button               |
-| `searchable`   | `boolean`                             | `false`             | Enable option filtering         |
-| `multiple`     | `boolean`                             | `false`             | Allow multiple selections       |
-| `error`        | `boolean`                             | `false`             | Error state                     |
-| `errorMessage` | `string`                              | —                   | Error message text              |
-| `noDataText`   | `string`                              | `'No data found'`   | Empty state message             |
+| Prop           | Type                                | Default           | Description               |
+| -------------- | ----------------------------------- | ----------------- | ------------------------- |
+| `modelValue`   | `string \| number \| array \| null` | —                 | v-model value             |
+| `options`      | `AtomSelectOption[]`                | `[]`              | List of options           |
+| `size`         | `'sm' \| 'md' \| 'lg'`              | `'md'`            | Select size               |
+| `placeholder`  | `string`                            | `'Select...'`     | Placeholder text          |
+| `label`        | `string`                            | —                 | Field label               |
+| `hint`         | `string`                            | —                 | Helper text               |
+| `disabled`     | `boolean`                           | `false`           | Disable the select        |
+| `clearable`    | `boolean`                           | `false`           | Show clear button         |
+| `searchable`   | `boolean`                           | `false`           | Enable option filtering   |
+| `multiple`     | `boolean`                           | `false`           | Allow multiple selections |
+| `error`        | `boolean`                           | `false`           | Error state               |
+| `errorMessage` | `string`                            | —                 | Error message text        |
+| `noDataText`   | `string`                            | `'No data found'` | Empty state message       |
 
 ---
 
@@ -185,21 +185,21 @@ interface AtomSelectOption {
 
 ## Emits
 
-| Event               | Payload  | Description               |
-| ------------------- | -------- | ------------------------- |
-| `update:modelValue` | `value`  | v-model update            |
-| `change`            | `value`  | Selection changed         |
-| `clear`             | —        | Clear button clicked      |
-| `focus`             | —        | Dropdown opened           |
-| `blur`              | —        | Dropdown closed           |
+| Event               | Payload | Description          |
+| ------------------- | ------- | -------------------- |
+| `update:modelValue` | `value` | v-model update       |
+| `change`            | `value` | Selection changed    |
+| `clear`             | —       | Clear button clicked |
+| `focus`             | —       | Dropdown opened      |
+| `blur`              | —       | Dropdown closed      |
 
 ---
 
 ## Keyboard Navigation
 
-| Key           | Action                          |
-| ------------- | ------------------------------- |
-| `↓ / ↑`       | Navigate through options        |
-| `Enter`       | Select the focused option       |
-| `Escape`      | Close the dropdown              |
-| `Space / ↓`   | Open the dropdown (on trigger)  |
+| Key         | Action                         |
+| ----------- | ------------------------------ |
+| `↓ / ↑`     | Navigate through options       |
+| `Enter`     | Select the focused option      |
+| `Escape`    | Close the dropdown             |
+| `Space / ↓` | Open the dropdown (on trigger) |

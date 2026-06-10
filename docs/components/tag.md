@@ -114,27 +114,27 @@ const dynamicCode = `<AtomTag
 
 ## Props
 
-| Prop        | Type                                                                       | Default     | Description           |
-| ----------- | -------------------------------------------------------------------------- | ----------- | --------------------- |
-| `variant`   | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger' \| 'info'` | `'primary'` | Color variant         |
-| `size`      | `'sm' \| 'md' \| 'lg'`                                                    | `'md'`      | Tag size              |
-| `closeable` | `boolean`                                                                  | `false`     | Show close button     |
-| `outline`   | `boolean`                                                                  | `false`     | Outline style         |
-| `pill`      | `boolean`                                                                  | `false`     | Fully rounded shape   |
-| `disabled`  | `boolean`                                                                  | `false`     | Disable interaction   |
+| Prop        | Type                                                                       | Default     | Description         |
+| ----------- | -------------------------------------------------------------------------- | ----------- | ------------------- |
+| `variant`   | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger' \| 'info'` | `'primary'` | Color variant       |
+| `size`      | `'sm' \| 'md' \| 'lg'`                                                     | `'md'`      | Tag size            |
+| `closeable` | `boolean`                                                                  | `false`     | Show close button   |
+| `outline`   | `boolean`                                                                  | `false`     | Outline style       |
+| `pill`      | `boolean`                                                                  | `false`     | Fully rounded shape |
+| `disabled`  | `boolean`                                                                  | `false`     | Disable interaction |
 
 ---
 
 ## Emits
 
-| Event   | Description                  |
-| ------- | ---------------------------- |
-| `close` | Close button was clicked     |
+| Event   | Description              |
+| ------- | ------------------------ |
+| `close` | Close button was clicked |
 
 ---
 
 ## Slots
 
-| Slot      | Description     |
-| --------- | --------------- |
-| `default` | Tag text/label  |
+| Slot      | Description    |
+| --------- | -------------- |
+| `default` | Tag text/label |

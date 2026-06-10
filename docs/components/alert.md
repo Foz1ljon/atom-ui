@@ -88,27 +88,27 @@ const customIconCode = `<AtomAlert variant="danger" title="Access Denied">
 
 ## Props
 
-| Prop        | Type                                             | Default  | Description                      |
-| ----------- | ------------------------------------------------ | -------- | -------------------------------- |
-| `variant`   | `'info' \| 'success' \| 'warning' \| 'danger'`  | `'info'` | Semantic color variant           |
-| `title`     | `string`                                         | —        | Alert title text                 |
-| `closeable` | `boolean`                                        | `false`  | Show dismiss button              |
-| `showIcon`  | `boolean`                                        | `true`   | Show the leading icon            |
+| Prop        | Type                                           | Default  | Description            |
+| ----------- | ---------------------------------------------- | -------- | ---------------------- |
+| `variant`   | `'info' \| 'success' \| 'warning' \| 'danger'` | `'info'` | Semantic color variant |
+| `title`     | `string`                                       | —        | Alert title text       |
+| `closeable` | `boolean`                                      | `false`  | Show dismiss button    |
+| `showIcon`  | `boolean`                                      | `true`   | Show the leading icon  |
 
 ---
 
 ## Emits
 
-| Event   | Description               |
-| ------- | ------------------------- |
-| `close` | Dismiss button clicked    |
+| Event   | Description            |
+| ------- | ---------------------- |
+| `close` | Dismiss button clicked |
 
 ---
 
 ## Slots
 
-| Slot      | Description                       |
-| --------- | --------------------------------- |
-| `default` | Alert description text            |
-| `title`   | Custom title (overrides prop)     |
-| `icon`    | Custom icon                       |
+| Slot      | Description                   |
+| --------- | ----------------------------- |
+| `default` | Alert description text        |
+| `title`   | Custom title (overrides prop) |
+| `icon`    | Custom icon                   |

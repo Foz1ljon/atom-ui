@@ -87,8 +87,8 @@ const usageCode = `<div v-if="loading" style="display:flex; justify-content:cent
 
 ## Props
 
-| Prop      | Type                                                                          | Default     | Description      |
-| --------- | ----------------------------------------------------------------------------- | ----------- | ---------------- |
-| `size`    | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'`                                      | `'md'`      | Spinner size     |
-| `variant` | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger' \| 'white'` | `'primary'` | Color variant    |
-| `label`   | `string`                                                                      | —           | Text below ring  |
+| Prop      | Type                                                                        | Default     | Description     |
+| --------- | --------------------------------------------------------------------------- | ----------- | --------------- |
+| `size`    | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'`                                      | `'md'`      | Spinner size    |
+| `variant` | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger' \| 'white'` | `'primary'` | Color variant   |
+| `label`   | `string`                                                                    | —           | Text below ring |

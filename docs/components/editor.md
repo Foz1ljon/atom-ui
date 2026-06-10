@@ -80,43 +80,43 @@ const heightCode = `<AtomEditor
 
 | Group          | Buttons                                                         |
 | -------------- | --------------------------------------------------------------- |
-| **History**    | ↩ Undo `Ctrl+Z`, ↪ Redo `Ctrl+Y`                              |
-| **Block**      | Paragraph, H1, H2, H3, H4, Blockquote (dropdown)              |
-| **Formatting** | **B** Bold, *I* Italic, <u>U</u> Underline, ~~S~~ Strikethrough |
-| **Lists**      | • Unordered list, 1. Ordered list                              |
-| **Alignment**  | Left, Center, Right, Justify                                   |
-| **Insert**     | 🔗 Link, ✂️ Unlink, 🖼 Image, `{}` Code block, — Divider      |
-| **Source**     | `</>` Toggle raw HTML view                                     |
+| **History**    | ↩ Undo `Ctrl+Z`, ↪ Redo `Ctrl+Y`                                |
+| **Block**      | Paragraph, H1, H2, H3, H4, Blockquote (dropdown)                |
+| **Formatting** | **B** Bold, _I_ Italic, <u>U</u> Underline, ~~S~~ Strikethrough |
+| **Lists**      | • Unordered list, 1. Ordered list                               |
+| **Alignment**  | Left, Center, Right, Justify                                    |
+| **Insert**     | 🔗 Link, ✂️ Unlink, 🖼 Image, `{}` Code block, — Divider        |
+| **Source**     | `</>` Toggle raw HTML view                                      |
 
 ---
 
 ## Props
 
-| Prop            | Type      | Default                    | Description                       |
-| --------------- | --------- | -------------------------- | --------------------------------- |
-| `modelValue`    | `string`  | `''`                       | HTML content (v-model)            |
-| `placeholder`   | `string`  | `'Start typing...'`        | Placeholder shown when empty      |
-| `label`         | `string`  | —                          | Field label                       |
-| `hint`          | `string`  | —                          | Helper text below the editor      |
-| `minHeight`     | `string`  | `'200px'`                  | Minimum editor height             |
-| `maxHeight`     | `string`  | `'600px'`                  | Maximum editor height (scrollable)|
-| `disabled`      | `boolean` | `false`                    | Disable all editing               |
-| `readonly`      | `boolean` | `false`                    | Read-only mode                    |
-| `error`         | `boolean` | `false`                    | Error state styling               |
-| `errorMessage`  | `string`  | —                          | Error message text                |
-| `showWordCount` | `boolean` | `true`                     | Word and character counter        |
-| `showSource`    | `boolean` | `true`                     | Show the HTML source toggle       |
+| Prop            | Type      | Default             | Description                        |
+| --------------- | --------- | ------------------- | ---------------------------------- |
+| `modelValue`    | `string`  | `''`                | HTML content (v-model)             |
+| `placeholder`   | `string`  | `'Start typing...'` | Placeholder shown when empty       |
+| `label`         | `string`  | —                   | Field label                        |
+| `hint`          | `string`  | —                   | Helper text below the editor       |
+| `minHeight`     | `string`  | `'200px'`           | Minimum editor height              |
+| `maxHeight`     | `string`  | `'600px'`           | Maximum editor height (scrollable) |
+| `disabled`      | `boolean` | `false`             | Disable all editing                |
+| `readonly`      | `boolean` | `false`             | Read-only mode                     |
+| `error`         | `boolean` | `false`             | Error state styling                |
+| `errorMessage`  | `string`  | —                   | Error message text                 |
+| `showWordCount` | `boolean` | `true`              | Word and character counter         |
+| `showSource`    | `boolean` | `true`              | Show the HTML source toggle        |
 
 ---
 
 ## Emits
 
-| Event               | Payload        | Description                       |
-| ------------------- | -------------- | --------------------------------- |
-| `update:modelValue` | `html: string` | HTML content updated (v-model)    |
-| `change`            | `html: string` | Content changed                   |
-| `focus`             | `FocusEvent`   | Editor received focus             |
-| `blur`              | `FocusEvent`   | Editor lost focus                 |
+| Event               | Payload        | Description                    |
+| ------------------- | -------------- | ------------------------------ |
+| `update:modelValue` | `html: string` | HTML content updated (v-model) |
+| `change`            | `html: string` | Content changed                |
+| `focus`             | `FocusEvent`   | Editor received focus          |
+| `blur`              | `FocusEvent`   | Editor lost focus              |
 
 ---
 
@@ -124,25 +124,20 @@ const heightCode = `<AtomEditor
 
 ```vue
 <script setup lang="ts">
-import { ref } from 'vue'
-import { AtomEditor } from 'atomui-vue3'
-import 'atomui-vue3/style.css'
+  import { ref } from "vue";
+  import { AtomEditor } from "atomui-vue3";
+  import "atomui-vue3/style.css";
 
-const body = ref('')
+  const body = ref("");
 
-async function publish() {
-  // body.value contains the full HTML string
-  await api.post('/posts', { body: body.value })
-}
+  async function publish() {
+    // body.value contains the full HTML string
+    await api.post("/posts", { body: body.value });
+  }
 </script>
 
 <template>
-  <AtomEditor
-    v-model="body"
-    label="Post Content"
-    placeholder="Write your post..."
-    min-height="300px"
-  />
+  <AtomEditor v-model="body" label="Post Content" placeholder="Write your post..." min-height="300px" />
   <AtomButton @click="publish">Publish</AtomButton>
 </template>
 ```

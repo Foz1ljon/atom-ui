@@ -102,13 +102,13 @@ const dotCode = `<AtomBadge variant="success" dot>Active</AtomBadge>
 
 ## Props
 
-| Prop      | Type                                                                       | Default     | Description               |
-| --------- | -------------------------------------------------------------------------- | ----------- | ------------------------- |
-| `variant` | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger' \| 'info'` | `'primary'` | Color variant             |
-| `size`    | `'sm' \| 'md' \| 'lg'`                                                    | `'md'`      | Badge size                |
-| `dot`     | `boolean`                                                                  | `false`     | Show leading dot          |
-| `pill`    | `boolean`                                                                  | `false`     | Fully rounded shape       |
-| `outline` | `boolean`                                                                  | `false`     | Outline style             |
+| Prop      | Type                                                                       | Default     | Description         |
+| --------- | -------------------------------------------------------------------------- | ----------- | ------------------- |
+| `variant` | `'primary' \| 'secondary' \| 'success' \| 'warning' \| 'danger' \| 'info'` | `'primary'` | Color variant       |
+| `size`    | `'sm' \| 'md' \| 'lg'`                                                     | `'md'`      | Badge size          |
+| `dot`     | `boolean`                                                                  | `false`     | Show leading dot    |
+| `pill`    | `boolean`                                                                  | `false`     | Fully rounded shape |
+| `outline` | `boolean`                                                                  | `false`     | Outline style       |
 
 ---
 

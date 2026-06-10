@@ -168,34 +168,34 @@ const prefixCode = `<AtomInput v-model="value" placeholder="Search...">
 
 ## Props
 
-| Prop           | Type                                           | Default  | Description                     |
-| -------------- | ---------------------------------------------- | -------- | ------------------------------- |
-| `modelValue`   | `string \| number`                             | —        | v-model value                   |
-| `type`         | `'text' \| 'password' \| 'email' \| 'number' \| 'search' \| ...` | `'text'` | Input type |
-| `size`         | `'sm' \| 'md' \| 'lg'`                        | `'md'`   | Input size                      |
-| `label`        | `string`                                       | —        | Field label                     |
-| `placeholder`  | `string`                                       | —        | Placeholder text                |
-| `hint`         | `string`                                       | —        | Helper text below the input     |
-| `disabled`     | `boolean`                                      | `false`  | Disable the input               |
-| `readonly`     | `boolean`                                      | `false`  | Read-only mode                  |
-| `clearable`    | `boolean`                                      | `false`  | Show clear button when not empty|
-| `showPassword` | `boolean`                                      | `false`  | Password visibility toggle      |
-| `error`        | `boolean`                                      | `false`  | Error state styling             |
-| `errorMessage` | `string`                                       | —        | Error message text              |
-| `maxlength`    | `number`                                       | —        | Maximum character count         |
-| `showCount`    | `boolean`                                      | `false`  | Display character counter       |
+| Prop           | Type                                                             | Default  | Description                      |
+| -------------- | ---------------------------------------------------------------- | -------- | -------------------------------- |
+| `modelValue`   | `string \| number`                                               | —        | v-model value                    |
+| `type`         | `'text' \| 'password' \| 'email' \| 'number' \| 'search' \| ...` | `'text'` | Input type                       |
+| `size`         | `'sm' \| 'md' \| 'lg'`                                           | `'md'`   | Input size                       |
+| `label`        | `string`                                                         | —        | Field label                      |
+| `placeholder`  | `string`                                                         | —        | Placeholder text                 |
+| `hint`         | `string`                                                         | —        | Helper text below the input      |
+| `disabled`     | `boolean`                                                        | `false`  | Disable the input                |
+| `readonly`     | `boolean`                                                        | `false`  | Read-only mode                   |
+| `clearable`    | `boolean`                                                        | `false`  | Show clear button when not empty |
+| `showPassword` | `boolean`                                                        | `false`  | Password visibility toggle       |
+| `error`        | `boolean`                                                        | `false`  | Error state styling              |
+| `errorMessage` | `string`                                                         | —        | Error message text               |
+| `maxlength`    | `number`                                                         | —        | Maximum character count          |
+| `showCount`    | `boolean`                                                        | `false`  | Display character counter        |
 
 ---
 
 ## Emits
 
-| Event               | Payload         | Description                   |
-| ------------------- | --------------- | ----------------------------- |
-| `update:modelValue` | `string`        | v-model update                |
-| `change`            | `string`        | Value changed                 |
-| `focus`             | `FocusEvent`    | Input focused                 |
-| `blur`              | `FocusEvent`    | Input blurred                 |
-| `clear`             | —               | Clear button clicked          |
+| Event               | Payload      | Description          |
+| ------------------- | ------------ | -------------------- |
+| `update:modelValue` | `string`     | v-model update       |
+| `change`            | `string`     | Value changed        |
+| `focus`             | `FocusEvent` | Input focused        |
+| `blur`              | `FocusEvent` | Input blurred        |
+| `clear`             | —            | Clear button clicked |
 
 ---
 

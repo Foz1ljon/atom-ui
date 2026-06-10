@@ -116,20 +116,20 @@ const fallbackCode = `<!-- Falls back to initials when image fails to load -->
 
 ## Props
 
-| Prop       | Type                                              | Default    | Description                           |
-| ---------- | ------------------------------------------------- | ---------- | ------------------------------------- |
-| `src`      | `string`                                          | —          | Image URL                             |
-| `alt`      | `string`                                          | —          | Image alt text                        |
-| `initials` | `string`                                          | —          | 1–2 character fallback text           |
-| `size`     | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'`          | `'md'`     | Avatar size                           |
-| `shape`    | `'circle' \| 'square'`                            | `'circle'` | Shape                                 |
-| `status`   | `'online' \| 'offline' \| 'busy' \| 'away'`      | —          | Status indicator dot                  |
-| `color`    | `string`                                          | —          | Custom background color for initials  |
+| Prop       | Type                                        | Default    | Description                          |
+| ---------- | ------------------------------------------- | ---------- | ------------------------------------ |
+| `src`      | `string`                                    | —          | Image URL                            |
+| `alt`      | `string`                                    | —          | Image alt text                       |
+| `initials` | `string`                                    | —          | 1–2 character fallback text          |
+| `size`     | `'xs' \| 'sm' \| 'md' \| 'lg' \| 'xl'`      | `'md'`     | Avatar size                          |
+| `shape`    | `'circle' \| 'square'`                      | `'circle'` | Shape                                |
+| `status`   | `'online' \| 'offline' \| 'busy' \| 'away'` | —          | Status indicator dot                 |
+| `color`    | `string`                                    | —          | Custom background color for initials |
 
 ---
 
 ## Slots
 
-| Slot      | Description                            |
-| --------- | -------------------------------------- |
-| `default` | Fully replaces the avatar content      |
+| Slot      | Description                       |
+| --------- | --------------------------------- |
+| `default` | Fully replaces the avatar content |

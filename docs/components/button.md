@@ -162,32 +162,32 @@ const blockCode = `<AtomButton block>Full Width Primary</AtomButton>
 
 ## Props
 
-| Prop       | Type                                                              | Default     | Description              |
-| ---------- | ----------------------------------------------------------------- | ----------- | ------------------------ |
-| `variant`  | `'primary' \| 'secondary' \| 'outline' \| 'ghost' \| 'danger' \| 'success'` | `'primary'` | Visual style  |
-| `size`     | `'sm' \| 'md' \| 'lg'`                                           | `'md'`      | Button size              |
-| `rounded`  | `'sm' \| 'md' \| 'lg' \| 'full'`                                 | `'md'`      | Border radius            |
-| `block`    | `boolean`                                                         | `false`     | Full width button        |
-| `disabled` | `boolean`                                                         | `false`     | Disable the button       |
-| `loading`  | `boolean`                                                         | `false`     | Show loading spinner     |
-| `htmlType` | `'button' \| 'submit' \| 'reset'`                                 | `'button'`  | Native button type       |
-| `ripple`   | `boolean`                                                         | `true`      | Enable ripple effect     |
+| Prop       | Type                                                                        | Default     | Description          |
+| ---------- | --------------------------------------------------------------------------- | ----------- | -------------------- |
+| `variant`  | `'primary' \| 'secondary' \| 'outline' \| 'ghost' \| 'danger' \| 'success'` | `'primary'` | Visual style         |
+| `size`     | `'sm' \| 'md' \| 'lg'`                                                      | `'md'`      | Button size          |
+| `rounded`  | `'sm' \| 'md' \| 'lg' \| 'full'`                                            | `'md'`      | Border radius        |
+| `block`    | `boolean`                                                                   | `false`     | Full width button    |
+| `disabled` | `boolean`                                                                   | `false`     | Disable the button   |
+| `loading`  | `boolean`                                                                   | `false`     | Show loading spinner |
+| `htmlType` | `'button' \| 'submit' \| 'reset'`                                           | `'button'`  | Native button type   |
+| `ripple`   | `boolean`                                                                   | `true`      | Enable ripple effect |
 
 ---
 
 ## Emits
 
-| Event   | Payload       | Description         |
-| ------- | ------------- | ------------------- |
-| `click` | `MouseEvent`  | Button was clicked  |
+| Event   | Payload      | Description        |
+| ------- | ------------ | ------------------ |
+| `click` | `MouseEvent` | Button was clicked |
 
 ---
 
 ## Slots
 
-| Slot        | Description                        |
-| ----------- | ---------------------------------- |
-| `default`   | Button label / content             |
-| `iconLeft`  | Icon on the left side              |
-| `iconRight` | Icon on the right side             |
-| `loader`    | Custom loading indicator           |
+| Slot        | Description              |
+| ----------- | ------------------------ |
+| `default`   | Button label / content   |
+| `iconLeft`  | Icon on the left side    |
+| `iconRight` | Icon on the right side   |
+| `loader`    | Custom loading indicator |

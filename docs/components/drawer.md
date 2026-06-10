@@ -71,10 +71,10 @@ const noMaskCode = `<AtomDrawer v-model="open" title="No Backdrop" :mask="false"
     <AtomButton variant="ghost" @click="open5 = true">▼ Bottom</AtomButton>
   </div>
 
-  <AtomDrawer v-model="open2" placement="right"  title="Right Drawer">Slides from the right.</AtomDrawer>
-  <AtomDrawer v-model="open3" placement="left"   title="Left Drawer">Slides from the left.</AtomDrawer>
-  <AtomDrawer v-model="open4" placement="top"    title="Top Drawer" size="sm">Slides from the top.</AtomDrawer>
-  <AtomDrawer v-model="open5" placement="bottom" title="Bottom Drawer" size="sm">Slides from the bottom.</AtomDrawer>
+<AtomDrawer v-model="open2" placement="right"  title="Right Drawer">Slides from the right.</AtomDrawer>
+<AtomDrawer v-model="open3" placement="left"   title="Left Drawer">Slides from the left.</AtomDrawer>
+<AtomDrawer v-model="open4" placement="top"    title="Top Drawer" size="sm">Slides from the top.</AtomDrawer>
+<AtomDrawer v-model="open5" placement="bottom" title="Bottom Drawer" size="sm">Slides from the bottom.</AtomDrawer>
 </DemoBlock>
 
 ---
@@ -96,28 +96,28 @@ const noMaskCode = `<AtomDrawer v-model="open" title="No Backdrop" :mask="false"
 
 ## Props
 
-| Prop             | Type                                      | Default   | Description                              |
-| ---------------- | ----------------------------------------- | --------- | ---------------------------------------- |
-| `modelValue`     | `boolean`                                 | `false`   | Open/closed state (v-model)              |
-| `title`          | `string`                                  | —         | Header title                             |
-| `placement`      | `'left' \| 'right' \| 'top' \| 'bottom'` | `'right'` | Which edge to slide from                 |
-| `size`           | `'sm' \| 'md' \| 'lg' \| 'full'`         | `'md'`    | Panel width (or height for top/bottom)   |
-| `closeable`      | `boolean`                                 | `true`    | Show the close button                    |
-| `mask`           | `boolean`                                 | `true`    | Show the backdrop overlay                |
-| `maskClosable`   | `boolean`                                 | `true`    | Close on backdrop click                  |
-| `destroyOnClose` | `boolean`                                 | `false`   | Unmount content when closed              |
+| Prop             | Type                                     | Default   | Description                            |
+| ---------------- | ---------------------------------------- | --------- | -------------------------------------- |
+| `modelValue`     | `boolean`                                | `false`   | Open/closed state (v-model)            |
+| `title`          | `string`                                 | —         | Header title                           |
+| `placement`      | `'left' \| 'right' \| 'top' \| 'bottom'` | `'right'` | Which edge to slide from               |
+| `size`           | `'sm' \| 'md' \| 'lg' \| 'full'`         | `'md'`    | Panel width (or height for top/bottom) |
+| `closeable`      | `boolean`                                | `true`    | Show the close button                  |
+| `mask`           | `boolean`                                | `true`    | Show the backdrop overlay              |
+| `maskClosable`   | `boolean`                                | `true`    | Close on backdrop click                |
+| `destroyOnClose` | `boolean`                                | `false`   | Unmount content when closed            |
 
 ---
 
 ## Emits
 
-| Event               | Description                         |
-| ------------------- | ----------------------------------- |
-| `update:modelValue` | v-model sync                        |
-| `open`              | Drawer started opening              |
-| `close`             | Drawer started closing              |
-| `afterOpen`         | Open animation finished             |
-| `afterClose`        | Close animation finished            |
+| Event               | Description              |
+| ------------------- | ------------------------ |
+| `update:modelValue` | v-model sync             |
+| `open`              | Drawer started opening   |
+| `close`             | Drawer started closing   |
+| `afterOpen`         | Open animation finished  |
+| `afterClose`        | Close animation finished |
 
 ---
 

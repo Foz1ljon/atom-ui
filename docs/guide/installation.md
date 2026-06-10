@@ -71,8 +71,8 @@ Import directly in your components for the best tree-shaking:
 
 ```vue
 <script setup lang="ts">
-import { AtomButton, AtomInput } from "atomui-vue3";
-import "atomui-vue3/style.css";
+  import { AtomButton, AtomInput } from "atomui-vue3";
+  import "atomui-vue3/style.css";
 </script>
 
 <template>

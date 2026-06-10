@@ -100,20 +100,20 @@ const paddingCode = `<AtomCard padding="none" bordered>No padding</AtomCard>
 
 ## Props
 
-| Prop        | Type                               | Default | Description                  |
-| ----------- | ---------------------------------- | ------- | ---------------------------- |
-| `shadow`    | `'none' \| 'sm' \| 'md' \| 'lg'`  | `'sm'`  | Box shadow intensity         |
-| `padding`   | `'none' \| 'sm' \| 'md' \| 'lg'`  | `'md'`  | Inner spacing                |
-| `bordered`  | `boolean`                          | `false` | Show a border                |
-| `hoverable` | `boolean`                          | `false` | Lift on hover                |
-| `radius`    | `'sm' \| 'md' \| 'lg'`            | `'md'`  | Border radius                |
+| Prop        | Type                             | Default | Description          |
+| ----------- | -------------------------------- | ------- | -------------------- |
+| `shadow`    | `'none' \| 'sm' \| 'md' \| 'lg'` | `'sm'`  | Box shadow intensity |
+| `padding`   | `'none' \| 'sm' \| 'md' \| 'lg'` | `'md'`  | Inner spacing        |
+| `bordered`  | `boolean`                        | `false` | Show a border        |
+| `hoverable` | `boolean`                        | `false` | Lift on hover        |
+| `radius`    | `'sm' \| 'md' \| 'lg'`           | `'md'`  | Border radius        |
 
 ---
 
 ## Slots
 
-| Slot      | Description              |
-| --------- | ------------------------ |
-| `header`  | Card header area         |
-| `default` | Main content             |
-| `footer`  | Card footer area         |
+| Slot      | Description      |
+| --------- | ---------------- |
+| `header`  | Card header area |
+| `default` | Main content     |
+| `footer`  | Card footer area |
