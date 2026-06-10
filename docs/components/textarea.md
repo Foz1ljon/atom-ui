@@ -3,8 +3,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import DemoBlock from "./DemoBlock.vue";
-import { AtomTextarea } from "atomui-vue3";
-import "atomui-vue3/style.css";
+import { AtomTextarea } from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 
 const v1 = ref("");
 const v2 = ref("");
@@ -162,44 +162,44 @@ Textarea automatically grows between `minRows` and `maxRows` as the user types.
 
 ## Props
 
-| Prop           | Type                                              | Default      | Description                                  |
-| -------------- | ------------------------------------------------- | ------------ | -------------------------------------------- |
-| `modelValue`   | `string`                                          | —            | v-model value                                |
-| `size`         | `'sm' \| 'md' \| 'lg'`                           | `'md'`       | Textarea size                                |
-| `label`        | `string`                                          | —            | Field label                                  |
-| `placeholder`  | `string`                                          | —            | Placeholder text                             |
-| `hint`         | `string`                                          | —            | Helper text shown below the textarea         |
-| `disabled`     | `boolean`                                         | `false`      | Disable the textarea                         |
-| `readonly`     | `boolean`                                         | `false`      | Read-only mode                               |
-| `error`        | `boolean`                                         | `false`      | Error state styling                          |
-| `errorMessage` | `string`                                          | —            | Error message text                           |
-| `rows`         | `number`                                          | `3`          | Number of visible rows                       |
-| `maxlength`    | `number`                                          | —            | Maximum character count                      |
-| `showCount`    | `boolean`                                         | `false`      | Display character counter                    |
-| `autosize`     | `boolean`                                         | `false`      | Auto-grow height as content increases        |
-| `minRows`      | `number`                                          | `2`          | Minimum rows when `autosize` is enabled      |
-| `maxRows`      | `number`                                          | `8`          | Maximum rows when `autosize` is enabled      |
-| `resize`       | `'none' \| 'vertical' \| 'horizontal' \| 'both'` | `'vertical'` | CSS resize handle direction                  |
+| Prop           | Type                                             | Default      | Description                             |
+| -------------- | ------------------------------------------------ | ------------ | --------------------------------------- |
+| `modelValue`   | `string`                                         | —            | v-model value                           |
+| `size`         | `'sm' \| 'md' \| 'lg'`                           | `'md'`       | Textarea size                           |
+| `label`        | `string`                                         | —            | Field label                             |
+| `placeholder`  | `string`                                         | —            | Placeholder text                        |
+| `hint`         | `string`                                         | —            | Helper text shown below the textarea    |
+| `disabled`     | `boolean`                                        | `false`      | Disable the textarea                    |
+| `readonly`     | `boolean`                                        | `false`      | Read-only mode                          |
+| `error`        | `boolean`                                        | `false`      | Error state styling                     |
+| `errorMessage` | `string`                                         | —            | Error message text                      |
+| `rows`         | `number`                                         | `3`          | Number of visible rows                  |
+| `maxlength`    | `number`                                         | —            | Maximum character count                 |
+| `showCount`    | `boolean`                                        | `false`      | Display character counter               |
+| `autosize`     | `boolean`                                        | `false`      | Auto-grow height as content increases   |
+| `minRows`      | `number`                                         | `2`          | Minimum rows when `autosize` is enabled |
+| `maxRows`      | `number`                                         | `8`          | Maximum rows when `autosize` is enabled |
+| `resize`       | `'none' \| 'vertical' \| 'horizontal' \| 'both'` | `'vertical'` | CSS resize handle direction             |
 
 ---
 
 ## Emits
 
-| Event               | Payload        | Description         |
-| ------------------- | -------------- | ------------------- |
-| `update:modelValue` | `string`       | v-model update      |
-| `change`            | `string`       | Value changed       |
-| `focus`             | `FocusEvent`   | Textarea focused    |
-| `blur`              | `FocusEvent`   | Textarea blurred    |
-| `keydown`           | `KeyboardEvent`| Key pressed down    |
-| `keyup`             | `KeyboardEvent`| Key released        |
+| Event               | Payload         | Description      |
+| ------------------- | --------------- | ---------------- |
+| `update:modelValue` | `string`        | v-model update   |
+| `change`            | `string`        | Value changed    |
+| `focus`             | `FocusEvent`    | Textarea focused |
+| `blur`              | `FocusEvent`    | Textarea blurred |
+| `keydown`           | `KeyboardEvent` | Key pressed down |
+| `keyup`             | `KeyboardEvent` | Key released     |
 
 ---
 
 ## Exposed
 
-| Name          | Type                    | Description                    |
-| ------------- | ----------------------- | ------------------------------ |
-| `focus()`     | `() => void`            | Programmatically focus element |
-| `blur()`      | `() => void`            | Programmatically blur element  |
+| Name          | Type                       | Description                    |
+| ------------- | -------------------------- | ------------------------------ |
+| `focus()`     | `() => void`               | Programmatically focus element |
+| `blur()`      | `() => void`               | Programmatically blur element  |
 | `textareaRef` | `Ref<HTMLTextAreaElement>` | Direct ref to the `<textarea>` |

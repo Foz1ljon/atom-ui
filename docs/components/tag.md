@@ -3,8 +3,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import DemoBlock from "./DemoBlock.vue";
-import { AtomTag } from "atomui-vue3";
-import "atomui-vue3/style.css";
+import { AtomTag } from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 
 const tags = ref(["Vue 3", "TypeScript", "Vite", "SCSS"]);
 

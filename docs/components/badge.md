@@ -2,8 +2,8 @@
 
 <script setup lang="ts">
 import DemoBlock from "./DemoBlock.vue";
-import { AtomBadge } from "atomui-vue3";
-import "atomui-vue3/style.css";
+import { AtomBadge } from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 
 const variantsCode = `<AtomBadge variant="primary">Primary</AtomBadge>
 <AtomBadge variant="secondary">Secondary</AtomBadge>

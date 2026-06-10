@@ -3,8 +3,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import DemoBlock from "./DemoBlock.vue";
-import { AtomEditor } from "atomui-vue3";
-import "atomui-vue3/style.css";
+import { AtomEditor } from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 
 const c1 = ref("<p>Start typing here...</p>");
 const c2 = ref("");
@@ -125,8 +125,8 @@ const heightCode = `<AtomEditor
 ```vue
 <script setup lang="ts">
   import { ref } from "vue";
-  import { AtomEditor } from "atomui-vue3";
-  import "atomui-vue3/style.css";
+  import { AtomEditor } from "atom-ui-vue";
+  import "atom-ui-vue/style.css";
 
   const body = ref("");
 

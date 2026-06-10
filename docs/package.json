@@ -13,7 +13,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "atomui-vue3": "link:.."
+    "atom-ui-vue": "link:.."
   },
   "devDependencies": {
     "vitepress": "^1.6.4"

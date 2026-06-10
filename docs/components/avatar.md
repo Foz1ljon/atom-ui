@@ -2,8 +2,8 @@
 
 <script setup lang="ts">
 import DemoBlock from "./DemoBlock.vue";
-import { AtomAvatar } from "atomui-vue3";
-import "atomui-vue3/style.css";
+import { AtomAvatar } from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 
 const basicCode = `<AtomAvatar initials="JD" />`;
 const imgCode = `<AtomAvatar src="https://i.pravatar.cc/100" alt="User avatar" />`;

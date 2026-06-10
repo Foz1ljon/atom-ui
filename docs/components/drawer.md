@@ -3,8 +3,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import DemoBlock from "./DemoBlock.vue";
-import { AtomDrawer, AtomButton } from "atomui-vue3";
-import "atomui-vue3/style.css";
+import { AtomDrawer, AtomButton } from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 
 const open1 = ref(false);
 const open2 = ref(false);

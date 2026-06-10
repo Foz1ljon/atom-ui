@@ -2,8 +2,8 @@
 
 <script setup lang="ts">
 import DemoBlock from "./DemoBlock.vue";
-import { AtomCard, AtomButton } from "atomui-vue3";
-import "atomui-vue3/style.css";
+import { AtomCard, AtomButton } from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 
 const basicCode = `<AtomCard>
   Simple card content goes here.

@@ -2,8 +2,8 @@
 
 <script setup lang="ts">
 import DemoBlock from "./DemoBlock.vue";
-import { AtomAlert } from "atomui-vue3";
-import "atomui-vue3/style.css";
+import { AtomAlert } from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 
 const variantsCode = `<AtomAlert variant="info"    title="Information" />
 <AtomAlert variant="success" title="Success!" />

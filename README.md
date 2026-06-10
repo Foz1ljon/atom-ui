@@ -4,11 +4,11 @@
   <p>A lightweight, fast and fully customizable Vue 3 component library</p>
 
   <p>
-    <a href="https://www.npmjs.com/package/atomui-vue3">
-      <img src="https://img.shields.io/npm/v/atomui-vue3?color=6366f1" />
+    <a href="https://www.npmjs.com/package/atom-ui-vue">
+      <img src="https://img.shields.io/npm/v/atom-ui-vue?color=6366f1" />
     </a>
     <a href="./LICENSE">
-      <img src="https://img.shields.io/npm/l/atomui-vue3?color=6366f1" />
+      <img src="https://img.shields.io/npm/l/atom-ui-vue?color=6366f1" />
     </a>
     <img src="https://img.shields.io/badge/Vue-3.x-42b883" />
     <img src="https://img.shields.io/badge/TypeScript-5.x-3178c6" />
@@ -46,11 +46,11 @@ Unlike traditional UI libraries, Atom UI focuses on:
 ## 📦 Installation
 
 ```bash
-pnpm add atomui-vue3
+pnpm add atom-ui-vue
 # or
-npm install atomui-vue3
+npm install atom-ui-vue
 # or
-yarn add atomui-vue3
+yarn add atom-ui-vue
 ```
 
 ---
@@ -59,8 +59,8 @@ yarn add atomui-vue3
 
 ```ts
 import { createApp } from "vue";
-import AtomUI from "atomui-vue3";
-import "atomui-vue3/style.css";
+import AtomUI from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 import App from "./App.vue";
 
 const app = createApp(App);

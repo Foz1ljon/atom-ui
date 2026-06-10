@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { useMessage } from 'atomui-vue3'
+import { useMessage } from 'atom-ui-vue'
 
 const msg = useMessage()
 const loadId = ref(null)
@@ -44,7 +44,7 @@ Global toast notifications via `useMessage()`. Place `<AtomMessage />` once in y
 
 ```vue
 <script setup>
-  import { useMessage } from "atomui-vue3";
+  import { useMessage } from "atom-ui-vue";
   const msg = useMessage();
 </script>
 <template>

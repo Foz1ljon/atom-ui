@@ -12,15 +12,15 @@
 ::: code-group
 
 ```bash [pnpm]
-pnpm add atomui-vue3
+pnpm add atom-ui-vue
 ```
 
 ```bash [npm]
-npm install atomui-vue3
+npm install atom-ui-vue
 ```
 
 ```bash [yarn]
-yarn add atomui-vue3
+yarn add atom-ui-vue
 ```
 
 :::
@@ -34,8 +34,8 @@ Register all components at once using the Vue plugin:
 ```ts
 // main.ts
 import { createApp } from "vue";
-import AtomUI from "atomui-vue3";
-import "atomui-vue3/style.css";
+import AtomUI from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 import App from "./App.vue";
 
 const app = createApp(App);
@@ -52,8 +52,8 @@ Import only the components you need for the smallest possible bundle:
 ```ts
 // main.ts
 import { createApp } from "vue";
-import { AtomButton, AtomInput, AtomSelect } from "atomui-vue3";
-import "atomui-vue3/style.css";
+import { AtomButton, AtomInput, AtomSelect } from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 import App from "./App.vue";
 
 const app = createApp(App);
@@ -71,8 +71,8 @@ Import directly in your components for the best tree-shaking:
 
 ```vue
 <script setup lang="ts">
-  import { AtomButton, AtomInput } from "atomui-vue3";
-  import "atomui-vue3/style.css";
+  import { AtomButton, AtomInput } from "atom-ui-vue";
+  import "atom-ui-vue/style.css";
 </script>
 
 <template>

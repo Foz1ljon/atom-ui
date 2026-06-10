@@ -3,8 +3,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import DemoBlock from "./DemoBlock.vue";
-import { AtomSelect } from "atomui-vue3";
-import "atomui-vue3/style.css";
+import { AtomSelect } from "atom-ui-vue";
+import "atom-ui-vue/style.css";
 
 const v1 = ref(null);
 const v2 = ref(null);
