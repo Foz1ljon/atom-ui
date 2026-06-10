@@ -2,7 +2,12 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  vite: { plugins: [] },
+  vite: {
+    plugins: [],
+    ssr: {
+      noExternal: ["atom-ui-vue"],
+    },
+  },
 
   title: "Atom UI",
   description: "Lightweight Vue 3 component library",
