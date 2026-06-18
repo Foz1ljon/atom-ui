@@ -9,7 +9,7 @@
     "dist",
     "README.md"
   ],
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Atom UI — Vue 3 component library",
   "license": "MIT",
   "type": "module",
