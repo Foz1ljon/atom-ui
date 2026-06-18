@@ -23,7 +23,7 @@
   &__trigger {
     display: flex;
     align-items: center;
-    background: $color-white;
+    background: $color-surface;
     border: 1.5px solid $color-gray-200;
     border-radius: $radius-md;
     cursor: pointer;
@@ -145,13 +145,10 @@
     svg { display: block; }
   }
 
-  // Dropdown
+  // Dropdown — teleported to <body>, positioned via inline fixed coords
   &__dropdown {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(100% + 6px);
-    background: $color-white;
+    position: fixed;
+    background: $color-surface;
     border: 1.5px solid $color-gray-200;
     border-radius: $radius-md;
     box-shadow: $shadow-lg;

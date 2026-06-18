@@ -40,7 +40,7 @@
     bottom: 0;
     right: 0;
     border-radius: $radius-full;
-    border: 2px solid $color-white;
+    border: 2px solid $color-surface;
 
     &--online  { background: $color-success; }
     &--offline { background: $color-gray-300; }

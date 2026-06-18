@@ -23,8 +23,10 @@ const editorRef = ref<HTMLDivElement | null>(null);
 const sourceRef = ref<HTMLTextAreaElement | null>(null);
 const isSourceMode = ref(false);
 const showLinkDialog = ref(false);
+const showImageDialog = ref(false);
 const linkUrl = ref("");
 const linkText = ref("");
+const imageUrl = ref("");
 const savedRange = ref<Range | null>(null);
 const activeFormats = ref<Record<string, boolean>>({});
 
@@ -164,11 +166,42 @@ function cancelLink() {
 }
 
 // ──────────────── Image ────────────────
+function openImageDialog() {
+  const sel = window.getSelection();
+  if (sel && sel.rangeCount) {
+    savedRange.value = sel.getRangeAt(0).cloneRange();
+  }
+  imageUrl.value = "";
+  showImageDialog.value = true;
+  nextTick(() => {
+    const inp = document.querySelector(".atom-editor__image-dialog input") as HTMLInputElement;
+    inp?.focus();
+  });
+}
+
 function insertImage() {
-  const url = window.prompt("Rasm URL manzilini kiriting:");
-  if (url) {
+  if (!imageUrl.value.trim()) {
+    showImageDialog.value = false;
+    return;
+  }
+  const url = imageUrl.value.trim().startsWith("http")
+    ? imageUrl.value.trim()
+    : `https://${imageUrl.value.trim()}`;
+
+  if (editorRef.value) {
+    editorRef.value.focus();
+    const sel = window.getSelection();
+    if (savedRange.value && sel) {
+      sel.removeAllRanges();
+      sel.addRange(savedRange.value);
+    }
     exec("insertHTML", `<img src="${url}" alt="rasm" />`);
   }
+  showImageDialog.value = false;
+}
+
+function cancelImage() {
+  showImageDialog.value = false;
 }
 
 // ──────────────── Code block ────────────────
@@ -215,6 +248,8 @@ function onSourceInput() {
 function onDocClick(e: MouseEvent) {
   const dlg = document.querySelector(".atom-editor__link-dialog");
   if (dlg && !dlg.contains(e.target as Node)) showLinkDialog.value = false;
+  const imgDlg = document.querySelector(".atom-editor__image-dialog");
+  if (imgDlg && !imgDlg.contains(e.target as Node)) showImageDialog.value = false;
 }
 
 // ──────────────── Paste handler ────────────────
@@ -371,7 +406,7 @@ onUnmounted(() => {
               <path d="M2 2l11 11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
             </svg>
           </button>
-          <button type="button" class="atom-editor__btn" title="Rasm qo'shish" @click="insertImage">
+          <button type="button" class="atom-editor__btn" title="Rasm qo'shish" @click="openImageDialog">
             <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
               <rect x="1.5" y="2.5" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
               <circle cx="5" cy="5.5" r="1" fill="currentColor"/>
@@ -414,6 +449,20 @@ onUnmounted(() => {
           <div class="atom-editor__link-dialog-actions">
             <button type="button" class="atom-editor__link-dialog-ok" @click="insertLink">OK</button>
             <button type="button" class="atom-editor__link-dialog-cancel" @click="cancelLink">Bekor</button>
+          </div>
+        </div>
+
+        <!-- Image dialog -->
+        <div v-if="showImageDialog" class="atom-editor__link-dialog atom-editor__image-dialog" @mousedown.stop>
+          <input
+            v-model="imageUrl"
+            placeholder="https://example.com/rasm.jpg"
+            @keyup.enter="insertImage"
+            @keyup.escape="cancelImage"
+          />
+          <div class="atom-editor__link-dialog-actions">
+            <button type="button" class="atom-editor__link-dialog-ok" @click="insertImage">OK</button>
+            <button type="button" class="atom-editor__link-dialog-cancel" @click="cancelImage">Bekor</button>
           </div>
         </div>
       </div>

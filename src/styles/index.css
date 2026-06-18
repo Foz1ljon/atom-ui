@@ -38,4 +38,87 @@
   --atom-radius-md: 12px;
   --atom-radius-lg: 16px;
   --atom-radius-full: 999px;
+
+  /* ── Themeable neutral tokens (light) ── */
+  --atom-surface: #ffffff;
+
+  --atom-gray-50: #f9fafb;
+  --atom-gray-100: #f3f4f6;
+  --atom-gray-200: #e5e7eb;
+  --atom-gray-300: #d1d5db;
+  --atom-gray-400: #9ca3af;
+  --atom-gray-500: #6b7280;
+  --atom-gray-600: #4b5563;
+  --atom-gray-700: #374151;
+  --atom-gray-800: #1f2937;
+  --atom-gray-900: #111827;
+
+  --atom-secondary: #f3f4f6;
+  --atom-secondary-hover: #e5e7eb;
+  --atom-secondary-active: #d1d5db;
+  --atom-secondary-text: #111827;
+  --atom-secondary-border: #e5e7eb;
+
+  --atom-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --atom-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
+  --atom-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.08);
+  --atom-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ───────────────────────────────────────────────
+   Dark mode — activated by a `.dark` class on a
+   root element (e.g. <html class="dark"> or <body>).
+   The neutral ramp is inverted: surface is darkest,
+   gray-900 becomes near-white text.
+   ─────────────────────────────────────────────── */
+.dark {
+  --atom-surface: #1e2530;
+
+  --atom-gray-50: #242c38;
+  --atom-gray-100: #2b3340;
+  --atom-gray-200: #333c4b;
+  --atom-gray-300: #3f4858;
+  --atom-gray-400: #6c7687;
+  --atom-gray-500: #8b95a6;
+  --atom-gray-600: #a6afbe;
+  --atom-gray-700: #c3cbd6;
+  --atom-gray-800: #dee3ea;
+  --atom-gray-900: #f2f5f9;
+
+  --atom-secondary: #333c4b;
+  --atom-secondary-hover: #3f4858;
+  --atom-secondary-active: #4a5466;
+  --atom-secondary-text: #f2f5f9;
+  --atom-secondary-border: #333c4b;
+
+  --atom-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
+  --atom-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.4);
+  --atom-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6), 0 4px 10px rgba(0, 0, 0, 0.45);
+  --atom-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.65), 0 8px 16px rgba(0, 0, 0, 0.5);
+
+  /* Button: re-theme hardcoded light tints */
+  --atom-color-secondary: #333c4b;
+  --atom-color-secondary-hover: #3f4858;
+  --atom-color-secondary-active: #4a5466;
+  --atom-color-secondary-text: #f2f5f9;
+  --atom-color-secondary-border: #333c4b;
+  --atom-color-outline-bg: #1e2530;
+  --atom-color-outline-hover: rgba(37, 99, 235, 0.16);
+  --atom-color-outline-active: rgba(37, 99, 235, 0.24);
+  --atom-color-ghost-text: #f2f5f9;
+  --atom-color-ghost-hover: rgba(255, 255, 255, 0.08);
+  --atom-color-ghost-active: rgba(255, 255, 255, 0.12);
+  --atom-color-ghost-ripple: rgba(255, 255, 255, 0.12);
+}
+
+/* Button variants — dark tint fixes for hardcoded values in SCSS */
+.dark .atom-btn--outline {
+  --btn-hover-bg: rgba(37, 99, 235, 0.16);
+  --btn-active-bg: rgba(37, 99, 235, 0.24);
+}
+
+.dark .atom-btn--ghost {
+  --btn-hover-bg: rgba(255, 255, 255, 0.08);
+  --btn-active-bg: rgba(255, 255, 255, 0.12);
+  --btn-ripple: rgba(255, 255, 255, 0.12);
 }

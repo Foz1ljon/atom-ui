@@ -10,6 +10,7 @@ import { AtomAvatar } from "./components/AtomAvatar/";
 import { AtomTag } from "./components/AtomTag/";
 import { AtomSelect } from "./components/AtomSelect/";
 import { AtomDrawer } from "./components/AtomDrawer/";
+import { AtomModal } from "./components/AtomModal/";
 import { AtomEditor } from "./components/AtomEditor/";
 import { AtomCheckbox, AtomCheckboxGroup } from "./components/AtomCheckbox/";
 import { AtomRadio, AtomRadioGroup } from "./components/AtomRadio/";
@@ -31,6 +32,7 @@ export * from "./components/AtomAvatar";
 export * from "./components/AtomTag";
 export * from "./components/AtomSelect";
 export * from "./components/AtomDrawer";
+export * from "./components/AtomModal";
 export * from "./components/AtomEditor";
 export * from "./components/AtomCheckbox";
 export * from "./components/AtomRadio";
@@ -56,6 +58,7 @@ export {
   AtomTag,
   AtomSelect,
   AtomDrawer,
+  AtomModal,
   AtomEditor,
   AtomCheckbox,
   AtomCheckboxGroup,
@@ -82,6 +85,7 @@ const components = [
   AtomTag,
   AtomSelect,
   AtomDrawer,
+  AtomModal,
   AtomEditor,
   AtomCheckbox,
   AtomCheckboxGroup,

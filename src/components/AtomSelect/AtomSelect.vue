@@ -23,7 +23,10 @@ const isOpen = ref(false);
 const searchQuery = ref("");
 const focusedIndex = ref(-1);
 const wrapperRef = ref<HTMLElement | null>(null);
+const triggerRef = ref<HTMLElement | null>(null);
+const dropdownRef = ref<HTMLElement | null>(null);
 const searchRef = ref<HTMLInputElement | null>(null);
+const dropdownStyle = ref<Record<string, string>>({});
 
 const selectedOptions = computed<AtomSelectOption[]>(() => {
   if (props.multiple) {
@@ -58,18 +61,51 @@ const triggerClasses = computed(() => [
   props.disabled && "atom-select__trigger--disabled",
 ]);
 
+function updatePosition() {
+  const trigger = triggerRef.value;
+  if (!trigger) return;
+  const rect = trigger.getBoundingClientRect();
+  const gap = 6;
+  const dropH = dropdownRef.value?.offsetHeight ?? 0;
+  const spaceBelow = window.innerHeight - rect.bottom;
+  const spaceAbove = rect.top;
+  // Flip above when not enough room below and there's more room above
+  const openUp = spaceBelow < dropH + gap && spaceAbove > spaceBelow;
+
+  dropdownStyle.value = {
+    position: "fixed",
+    left: `${rect.left}px`,
+    width: `${rect.width}px`,
+    ...(openUp
+      ? { bottom: `${window.innerHeight - rect.top + gap}px` }
+      : { top: `${rect.bottom + gap}px` }),
+  };
+}
+
+function onScrollOrResize() {
+  if (isOpen.value) updatePosition();
+}
+
 function open() {
   if (props.disabled) return;
   isOpen.value = true;
   searchQuery.value = "";
   focusedIndex.value = -1;
-  nextTick(() => searchRef.value?.focus());
+  nextTick(() => {
+    updatePosition();
+    searchRef.value?.focus();
+  });
+  window.addEventListener("scroll", onScrollOrResize, true);
+  window.addEventListener("resize", onScrollOrResize);
   emit("focus");
 }
 
 function close() {
+  if (!isOpen.value) return;
   isOpen.value = false;
   searchQuery.value = "";
+  window.removeEventListener("scroll", onScrollOrResize, true);
+  window.removeEventListener("resize", onScrollOrResize);
   emit("blur");
 }
 
@@ -141,11 +177,18 @@ function onDropdownKeydown(e: KeyboardEvent) {
 watch(filteredOptions, () => { focusedIndex.value = -1; });
 
 function onClickOutside(e: MouseEvent) {
-  if (wrapperRef.value && !wrapperRef.value.contains(e.target as Node)) close();
+  const target = e.target as Node;
+  const inWrapper = wrapperRef.value?.contains(target);
+  const inDropdown = dropdownRef.value?.contains(target);
+  if (!inWrapper && !inDropdown) close();
 }
 
 onMounted(() => document.addEventListener("mousedown", onClickOutside));
-onUnmounted(() => document.removeEventListener("mousedown", onClickOutside));
+onUnmounted(() => {
+  document.removeEventListener("mousedown", onClickOutside);
+  window.removeEventListener("scroll", onScrollOrResize, true);
+  window.removeEventListener("resize", onScrollOrResize);
+});
 </script>
 
 <template>
@@ -155,6 +198,7 @@ onUnmounted(() => document.removeEventListener("mousedown", onClickOutside));
     <div ref="wrapperRef" class="atom-select__wrapper">
       <!-- Trigger -->
       <div
+        ref="triggerRef"
         :class="triggerClasses"
         tabindex="0"
         role="combobox"
@@ -202,8 +246,15 @@ onUnmounted(() => document.removeEventListener("mousedown", onClickOutside));
       </div>
 
       <!-- Dropdown -->
-      <Transition name="atom-select-drop">
-        <div v-if="isOpen" class="atom-select__dropdown" @keydown="onDropdownKeydown">
+      <Teleport to="body">
+        <Transition name="atom-select-drop">
+          <div
+            v-if="isOpen"
+            ref="dropdownRef"
+            class="atom-select__dropdown"
+            :style="dropdownStyle"
+            @keydown="onDropdownKeydown"
+          >
           <!-- Search -->
           <div v-if="searchable" class="atom-select__search">
             <input
@@ -241,8 +292,9 @@ onUnmounted(() => document.removeEventListener("mousedown", onClickOutside));
             </template>
             <div v-else class="atom-select__empty">{{ noDataText }}</div>
           </div>
-        </div>
-      </Transition>
+          </div>
+        </Transition>
+      </Teleport>
     </div>
 
     <span v-if="error && errorMessage" class="atom-select__error">{{ errorMessage }}</span>
