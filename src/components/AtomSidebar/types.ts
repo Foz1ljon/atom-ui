@@ -11,6 +11,7 @@ export interface AtomSidebarProps {
   modelValue?: boolean;
   width?: string;
   collapsedWidth?: string;
+  height?: string;
   activeKey?: string;
   items?: AtomSidebarItemOption[];
   bordered?: boolean;

@@ -113,6 +113,7 @@ const items = [
 | `modelValue` | `boolean` | `false` | Collapsed state (`v-model`) |
 | `width` | `string` | `'240px'` | Expanded width |
 | `collapsedWidth` | `string` | `'60px'` | Collapsed width |
+| `height` | `string` | `'100vh'` | Sidebar height — full screen by default; set `'100%'` when inside a sized container |
 | `activeKey` | `string` | — | Active item key (`v-model:active-key`) |
 | `items` | `AtomSidebarItemOption[]` | `[]` | Navigation items |
 | `bordered` | `boolean` | `true` | Show right border |

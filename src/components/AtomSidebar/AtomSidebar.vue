@@ -10,6 +10,7 @@ const props = withDefaults(defineProps<AtomSidebarProps>(), {
   modelValue: false,
   width: "240px",
   collapsedWidth: "60px",
+  height: "100vh",
   items: () => [],
   bordered: true,
 });
@@ -23,6 +24,7 @@ provide("sidebarCollapsed", computed(() => isCollapsed.value));
 
 const sidebarStyle = computed(() => ({
   width: isCollapsed.value ? props.collapsedWidth : props.width,
+  height: props.height,
 }));
 
 function toggle() {
