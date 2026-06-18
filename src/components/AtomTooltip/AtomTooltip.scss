@@ -11,11 +11,12 @@
     border-radius: $radius-md;
     font-size: 12px;
     line-height: 1.5;
-    white-space: nowrap;
     pointer-events: none;
     max-width: 260px;
-    word-break: break-word;
+    text-align: left;
     white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
 
     // Arrow base
     &::after {
@@ -158,13 +159,14 @@
 }
 
 // Tooltip fade transition
+// NB: only opacity is animated so the per-placement positioning
+// transforms (translateX / translateY) are never overridden.
 .atom-tooltip-enter-active,
 .atom-tooltip-leave-active {
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition: opacity 0.18s ease;
 }
 
 .atom-tooltip-enter-from,
 .atom-tooltip-leave-to {
   opacity: 0;
-  transform: translateX(-50%) scale(0.9);
 }

@@ -181,8 +181,19 @@
   .atom-sidebar--collapsed & {
     &__label,
     &__badge,
-    &__arrow { opacity: 0; width: 0; overflow: hidden; }
+    &__arrow {
+      flex: 0 0 0; // prevent flex-grow from pushing the icon off-center
+      opacity: 0;
+      width: 0;
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+    }
 
-    &__btn { justify-content: center; padding: 8px; }
+    &__btn {
+      justify-content: center;
+      gap: 0; // remove gaps so the lone icon stays centered
+      padding: 8px;
+    }
   }
 }
