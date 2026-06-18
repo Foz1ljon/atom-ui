@@ -75,6 +75,7 @@ export default defineConfig({
           { text: "Tooltip",    link: "/components/tooltip" },
           { text: "Message",    link: "/components/message" },
           { text: "Drawer",     link: "/components/drawer" },
+          { text: "Modal",      link: "/components/modal" },
           { text: "Editor",     link: "/components/editor" },
         ],
       },
