@@ -1,6 +1,13 @@
 // .vitepress/config.mts
 import { defineConfig } from "vitepress";
 
+// ⚠️ Replace with your real deployed URL (no trailing slash).
+// Used for the sitemap, canonical links and Open Graph tags.
+const hostname = "https://atom-ui.netlify.app";
+
+const description =
+  "Atom UI — lightweight, accessible Vue 3 component library with 25+ TypeScript components, SCSS theming, dark mode and mobile-first design.";
+
 export default defineConfig({
   vite: {
     plugins: [],
@@ -10,8 +17,77 @@ export default defineConfig({
   },
 
   title: "Atom UI",
-  description: "Lightweight Vue 3 component library",
+  description,
   lang: "en",
+
+  // Pretty, indexable URLs without ".html"
+  cleanUrls: true,
+  lastUpdated: true,
+
+  // Generates /sitemap.xml at build time for search engines
+  sitemap: {
+    hostname,
+  },
+
+  // Site-wide <head> tags (SEO + social sharing)
+  head: [
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/logo.svg" }],
+    ["meta", { name: "author", content: "Foziljon" }],
+    [
+      "meta",
+      {
+        name: "keywords",
+        content:
+          "Vue 3, Vue component library, UI kit, Atom UI, TypeScript components, SCSS, dark mode, frontend",
+      },
+    ],
+    ["meta", { name: "theme-color", content: "#2563eb" }],
+    ["meta", { name: "robots", content: "index, follow" }],
+
+    // Open Graph (Facebook, LinkedIn, Telegram…)
+    ["meta", { property: "og:type", content: "website" }],
+    ["meta", { property: "og:site_name", content: "Atom UI" }],
+    ["meta", { property: "og:title", content: "Atom UI — Vue 3 Component Library" }],
+    ["meta", { property: "og:description", content: description }],
+    ["meta", { property: "og:image", content: `${hostname}/logo.svg` }],
+    ["meta", { property: "og:locale", content: "en_US" }],
+
+    // Twitter / X card
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+    ["meta", { name: "twitter:title", content: "Atom UI — Vue 3 Component Library" }],
+    ["meta", { name: "twitter:description", content: description }],
+    ["meta", { name: "twitter:image", content: `${hostname}/logo.svg` }],
+
+    // 🔑 Google Search Console verification — replace the token after you
+    // add the site at https://search.google.com/search-console
+    ["meta", { name: "google-site-verification", content: "REPLACE_WITH_YOUR_TOKEN" }],
+  ],
+
+  // Per-page canonical + Open Graph URL/title/description for better indexing
+  transformPageData(pageData) {
+    const canonical = `${hostname}/${pageData.relativePath}`
+      .replace(/index\.md$/, "")
+      .replace(/\.md$/, "");
+
+    const pageTitle = pageData.frontmatter.title || pageData.title;
+    const pageDesc =
+      pageData.frontmatter.description || pageData.description || description;
+
+    pageData.frontmatter.head ??= [];
+    pageData.frontmatter.head.push(
+      ["link", { rel: "canonical", href: canonical }],
+      ["meta", { property: "og:url", content: canonical }],
+      [
+        "meta",
+        {
+          property: "og:title",
+          content: pageTitle ? `${pageTitle} | Atom UI` : "Atom UI",
+        },
+      ],
+      ["meta", { property: "og:description", content: pageDesc }],
+      ["meta", { name: "twitter:description", content: pageDesc }],
+    );
+  },
 
   themeConfig: {
     logo: "/logo.svg",

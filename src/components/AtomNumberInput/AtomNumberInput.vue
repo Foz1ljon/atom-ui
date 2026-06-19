@@ -70,6 +70,8 @@ function sanitize(raw: string): string {
       const [int, dec] = s.split(".");
       s = `${int}.${dec.slice(0, props.precision)}`;
     }
+    // a bare leading dot becomes "0." (e.g. "." → "0.", ".5" → "0.5")
+    if (s.startsWith(".")) s = "0" + s;
   }
   return (negative ? "-" : "") + s;
 }
