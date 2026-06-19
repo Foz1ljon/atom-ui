@@ -66,18 +66,7 @@
   }
 
   &__sizer {
-    height: 32px;
-    padding: 0 8px;
-    border: 1px solid $color-gray-300;
-    border-radius: $radius-md;
-    background: $color-surface;
-    color: $color-gray-700;
-    font-size: $font-sm;
-    cursor: pointer;
-    outline: none;
-    transition: border-color $transition-base;
-
-    &:focus { border-color: $color-primary; }
+    min-width: 110px;
   }
 
   &__jumper {

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import type { AtomPaginationProps, AtomPaginationEmits } from "./types";
+import { AtomSelect } from "../AtomSelect";
+import type { AtomSelectOption } from "../AtomSelect";
 import "./AtomPagination.scss";
 
 defineOptions({ name: "AtomPagination" });
@@ -22,6 +24,10 @@ const jumperInput = ref("");
 
 const totalPages = computed(() =>
   Math.max(1, Math.ceil(props.total / props.pageSize))
+);
+
+const sizeOptions = computed<AtomSelectOption[]>(() =>
+  props.pageSizes.map((s) => ({ label: `${s} / page`, value: s }))
 );
 
 const visiblePages = computed(() => {
@@ -56,8 +62,8 @@ function go(page: number) {
 function prev() { go(props.current - 1); }
 function next() { go(props.current + 1); }
 
-function onSizeChange(e: Event) {
-  const size = Number((e.target as HTMLSelectElement).value);
+function onSizeChange(value: string | number | (string | number)[] | null) {
+  const size = Number(value);
   emit("update:pageSize", size);
   const newCurrent = Math.min(props.current, Math.ceil(props.total / size));
   emit("update:current", newCurrent);
@@ -111,14 +117,15 @@ function onJumper(e: KeyboardEvent) {
     </template>
 
     <!-- Page size changer -->
-    <select
+    <AtomSelect
       v-if="showSizeChanger"
       class="atom-pagination__sizer"
-      :value="pageSize"
-      @change="onSizeChange"
-    >
-      <option v-for="s in pageSizes" :key="s" :value="s">{{ s }} / page</option>
-    </select>
+      size="sm"
+      :model-value="pageSize"
+      :options="sizeOptions"
+      :disabled="disabled"
+      @update:model-value="onSizeChange"
+    />
 
     <!-- Jumper -->
     <label v-if="showJumper" class="atom-pagination__jumper">

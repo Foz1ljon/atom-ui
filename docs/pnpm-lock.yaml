@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       atom-ui-vue:
-        specifier: ^0.1.7
-        version: 0.1.7(vue@3.5.31)
+        specifier: ^0.1.8
+        version: 0.1.8(vue@3.5.31)
     devDependencies:
       vitepress:
         specifier: ^1.6.4
@@ -570,8 +570,8 @@ packages:
     resolution: {integrity: sha512-yE5I83Q2s8euVou8Y3feXK08wyZInJWLYXgWO6Xti9jBUEZAGUahyeQ7wSZWkifLWVnQVKEz5RAmBlXG5nqxog==}
     engines: {node: '>= 14.0.0'}
 
-  atom-ui-vue@0.1.7:
-    resolution: {integrity: sha512-QTXZnVGcT8PDRt59L72DXq7NiC0u4uUpEwI+dlJcHbzTFVF1lS0vMcG/mswpe5LFhk7C2gj49QrVHFZujQmDPw==}
+  atom-ui-vue@0.1.8:
+    resolution: {integrity: sha512-Mnw/p7mN676YUB7WTKbXmOZqCHbkNQozJT+6YfprzeifpqX341PZPIHYuBYIXcoSHJSlfSxDJxHYEKJ4/UX53g==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       vue: ^3.0.0
@@ -1309,7 +1309,7 @@ snapshots:
       '@algolia/requester-fetch': 5.50.0
       '@algolia/requester-node-http': 5.50.0
 
-  atom-ui-vue@0.1.7(vue@3.5.31):
+  atom-ui-vue@0.1.8(vue@3.5.31):
     dependencies:
       vue: 3.5.31
 

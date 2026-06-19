@@ -1,5 +1,71 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, h } from 'vue'
+
+// ---- Rich / real-world example ----
+const palette = ['#6366f1', '#ec4899', '#0ea5e9', '#f59e0b', '#10b981']
+
+function avatar(name) {
+  const initials = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase()
+  const color = palette[name.length % palette.length]
+  return h('span', {
+    style: {
+      display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+      width: '32px', height: '32px', borderRadius: '50%', flexShrink: 0,
+      background: color, color: '#fff', fontSize: '12px', fontWeight: 600,
+    },
+  }, initials)
+}
+
+function userCell(row) {
+  return h('div', { style: { display: 'flex', alignItems: 'center', gap: '10px' } }, [
+    avatar(row.name),
+    h('div', { style: { display: 'flex', flexDirection: 'column', lineHeight: 1.3 } }, [
+      h('span', { style: { fontWeight: 600 } }, row.name),
+      h('span', { style: { fontSize: '12px', color: '#888' } }, row.email),
+    ]),
+  ])
+}
+
+const roleColors = {
+  Admin:   { bg: '#eef2ff', fg: '#4f46e5' },
+  Editor:  { bg: '#ecfdf5', fg: '#059669' },
+  Viewer:  { bg: '#f1f5f9', fg: '#475569' },
+}
+function roleCell(row) {
+  const c = roleColors[row.role] || roleColors.Viewer
+  return h('span', {
+    style: {
+      padding: '2px 10px', borderRadius: '999px', fontSize: '12px',
+      fontWeight: 600, background: c.bg, color: c.fg,
+    },
+  }, row.role)
+}
+
+const statusColors = { Active: '#10b981', Idle: '#f59e0b', Offline: '#94a3b8' }
+function statusCell(row) {
+  return h('span', { style: { display: 'inline-flex', alignItems: 'center', gap: '6px' } }, [
+    h('span', { style: { width: '8px', height: '8px', borderRadius: '50%', background: statusColors[row.status] } }),
+    h('span', null, row.status),
+  ])
+}
+
+function balanceCell(row) {
+  return h('span', { style: { fontWeight: 600, fontVariantNumeric: 'tabular-nums' } },
+    '$' + row.balance.toLocaleString('en-US'))
+}
+
+const richColumns = [
+  { key: 'name',    title: 'User',    render: userCell },
+  { key: 'role',    title: 'Role',    render: roleCell, sortable: true },
+  { key: 'status',  title: 'Status',  render: statusCell, sortable: true, align: 'center' },
+  { key: 'balance', title: 'Balance', render: balanceCell, sortable: true, align: 'right' },
+]
+const richData = [
+  { id: 1, name: 'Alice Johnson', email: 'alice@acme.io',   role: 'Admin',  status: 'Active',  balance: 12480 },
+  { id: 2, name: 'Bob Smith',     email: 'bob@acme.io',     role: 'Editor', status: 'Idle',    balance: 7320  },
+  { id: 3, name: 'Carol White',   email: 'carol@acme.io',   role: 'Viewer', status: 'Offline', balance: 2150  },
+  { id: 4, name: 'David Lee',     email: 'david@acme.io',   role: 'Editor', status: 'Active',  balance: 9870  },
+]
 
 const basicColumns = [
   { key: 'name',   title: 'Name' },
@@ -53,6 +119,48 @@ const stripedData = [
 # Table
 
 Feature-rich data table with sorting, skeleton loading, striped rows, and empty states.
+
+## Overview
+
+Use the `render` function on a column to draw fully custom cells — avatars, badges,
+status dots, formatted numbers — while keeping built-in sorting.
+
+<DemoBlock>
+  <AtomTable :columns="richColumns" :data="richData" hoverable striped />
+  <template #code>
+
+```vue
+<script setup>
+import { h } from 'vue'
+
+const columns = [
+  { key: 'name',    title: 'User',    render: userCell },
+  { key: 'role',    title: 'Role',    render: roleCell,    sortable: true },
+  { key: 'status',  title: 'Status',  render: statusCell,  sortable: true, align: 'center' },
+  { key: 'balance', title: 'Balance', render: balanceCell, sortable: true, align: 'right' },
+]
+
+// each render(row) returns a VNode built with h()
+function statusCell(row) {
+  const color = { Active: '#10b981', Idle: '#f59e0b', Offline: '#94a3b8' }[row.status]
+  return h('span', { style: { display: 'inline-flex', alignItems: 'center', gap: '6px' } }, [
+    h('span', { style: { width: '8px', height: '8px', borderRadius: '50%', background: color } }),
+    h('span', null, row.status),
+  ])
+}
+
+function balanceCell(row) {
+  return h('span', { style: { fontWeight: 600 } }, '$' + row.balance.toLocaleString())
+}
+</script>
+
+<template>
+  <AtomTable :columns="columns" :data="data" hoverable striped />
+</template>
+```
+
+  </template>
+</DemoBlock>
 
 ## Basic Usage
 

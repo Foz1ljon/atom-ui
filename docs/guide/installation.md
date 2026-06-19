@@ -43,6 +43,19 @@ app.use(AtomUI);
 app.mount("#app");
 ```
 
+::: tip Global vs. local usage
+After `app.use(AtomUI)` every `Atom*` component is registered globally — use them in any template **without importing**:
+
+```vue
+<template>
+  <!-- no import needed, works everywhere -->
+  <AtomButton variant="primary">Save</AtomButton>
+</template>
+```
+
+If you did **not** call `app.use(AtomUI)`, import each component where you use it (see [Import on Demand](#import-on-demand-recommended)).
+:::
+
 ---
 
 ## Individual Registration

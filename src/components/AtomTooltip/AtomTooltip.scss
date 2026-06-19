@@ -5,7 +5,8 @@
   display: inline-flex;
 
   &__box {
-    position: absolute;
+    // Positioning is handled via inline fixed styles (teleported to body),
+    // so placement classes only control the arrow direction.
     z-index: $z-tooltip;
     padding: 6px 10px;
     border-radius: $radius-md;
@@ -18,8 +19,8 @@
     word-break: normal;
     overflow-wrap: break-word;
 
-    // Arrow base
-    &::after {
+    // Arrow base (only when --arrow is present)
+    &--arrow::after {
       content: "";
       position: absolute;
       width: 0;
@@ -31,8 +32,6 @@
       background: rgba(#1a1a2e, 0.88);
       color: $color-white;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
-      &::after { /* arrows set per placement */ }
     }
 
     // Light theme
@@ -43,124 +42,94 @@
       box-shadow: $shadow-md;
     }
 
-    // Placements
-    &--top {
-      bottom: calc(100% + 8px);
+    // Placements — arrow only
+    &--top.atom-tooltip__box--arrow::after {
+      top: 100%;
       left: 50%;
-      transform: translateX(-50%);
-      &::after {
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 5px solid rgba(#1a1a2e, 0.88);
-      }
-      &.atom-tooltip__box--light::after { border-top-color: $color-gray-200; }
+      margin-left: -5px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid rgba(#1a1a2e, 0.88);
     }
+    &--top.atom-tooltip__box--light.atom-tooltip__box--arrow::after { border-top-color: $color-gray-200; }
 
-    &--top-start {
-      bottom: calc(100% + 8px);
-      left: 0;
-      &::after {
-        top: 100%;
-        left: 12px;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 5px solid rgba(#1a1a2e, 0.88);
-      }
-      &.atom-tooltip__box--light::after { border-top-color: $color-gray-200; }
+    &--top-start.atom-tooltip__box--arrow::after {
+      top: 100%;
+      left: 12px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid rgba(#1a1a2e, 0.88);
     }
+    &--top-start.atom-tooltip__box--light.atom-tooltip__box--arrow::after { border-top-color: $color-gray-200; }
 
-    &--top-end {
-      bottom: calc(100% + 8px);
-      right: 0;
-      &::after {
-        top: 100%;
-        right: 12px;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 5px solid rgba(#1a1a2e, 0.88);
-      }
-      &.atom-tooltip__box--light::after { border-top-color: $color-gray-200; }
+    &--top-end.atom-tooltip__box--arrow::after {
+      top: 100%;
+      right: 12px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid rgba(#1a1a2e, 0.88);
     }
+    &--top-end.atom-tooltip__box--light.atom-tooltip__box--arrow::after { border-top-color: $color-gray-200; }
 
-    &--bottom {
-      top: calc(100% + 8px);
+    &--bottom.atom-tooltip__box--arrow::after {
+      bottom: 100%;
       left: 50%;
-      transform: translateX(-50%);
-      &::after {
-        bottom: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 5px solid rgba(#1a1a2e, 0.88);
-      }
-      &.atom-tooltip__box--light::after { border-bottom-color: $color-gray-200; }
+      margin-left: -5px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid rgba(#1a1a2e, 0.88);
     }
+    &--bottom.atom-tooltip__box--light.atom-tooltip__box--arrow::after { border-bottom-color: $color-gray-200; }
 
-    &--bottom-start {
-      top: calc(100% + 8px);
-      left: 0;
-      &::after {
-        bottom: 100%;
-        left: 12px;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 5px solid rgba(#1a1a2e, 0.88);
-      }
-      &.atom-tooltip__box--light::after { border-bottom-color: $color-gray-200; }
+    &--bottom-start.atom-tooltip__box--arrow::after {
+      bottom: 100%;
+      left: 12px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid rgba(#1a1a2e, 0.88);
     }
+    &--bottom-start.atom-tooltip__box--light.atom-tooltip__box--arrow::after { border-bottom-color: $color-gray-200; }
 
-    &--bottom-end {
-      top: calc(100% + 8px);
-      right: 0;
-      &::after {
-        bottom: 100%;
-        right: 12px;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-bottom: 5px solid rgba(#1a1a2e, 0.88);
-      }
-      &.atom-tooltip__box--light::after { border-bottom-color: $color-gray-200; }
+    &--bottom-end.atom-tooltip__box--arrow::after {
+      bottom: 100%;
+      right: 12px;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid rgba(#1a1a2e, 0.88);
     }
+    &--bottom-end.atom-tooltip__box--light.atom-tooltip__box--arrow::after { border-bottom-color: $color-gray-200; }
 
-    &--left {
-      right: calc(100% + 8px);
+    &--left.atom-tooltip__box--arrow::after,
+    &--left-start.atom-tooltip__box--arrow::after,
+    &--left-end.atom-tooltip__box--arrow::after {
+      left: 100%;
       top: 50%;
-      transform: translateY(-50%);
-      &::after {
-        left: 100%;
-        top: 50%;
-        margin-top: -5px;
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-        border-left: 5px solid rgba(#1a1a2e, 0.88);
-      }
-      &.atom-tooltip__box--light::after { border-left-color: $color-gray-200; }
+      margin-top: -5px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid rgba(#1a1a2e, 0.88);
     }
+    &--left.atom-tooltip__box--light.atom-tooltip__box--arrow::after,
+    &--left-start.atom-tooltip__box--light.atom-tooltip__box--arrow::after,
+    &--left-end.atom-tooltip__box--light.atom-tooltip__box--arrow::after { border-left-color: $color-gray-200; }
 
-    &--right {
-      left: calc(100% + 8px);
+    &--right.atom-tooltip__box--arrow::after,
+    &--right-start.atom-tooltip__box--arrow::after,
+    &--right-end.atom-tooltip__box--arrow::after {
+      right: 100%;
       top: 50%;
-      transform: translateY(-50%);
-      &::after {
-        right: 100%;
-        top: 50%;
-        margin-top: -5px;
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-        border-right: 5px solid rgba(#1a1a2e, 0.88);
-      }
-      &.atom-tooltip__box--light::after { border-right-color: $color-gray-200; }
+      margin-top: -5px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 5px solid rgba(#1a1a2e, 0.88);
     }
+    &--right.atom-tooltip__box--light.atom-tooltip__box--arrow::after,
+    &--right-start.atom-tooltip__box--light.atom-tooltip__box--arrow::after,
+    &--right-end.atom-tooltip__box--light.atom-tooltip__box--arrow::after { border-right-color: $color-gray-200; }
   }
 }
 
 // Tooltip fade transition
-// NB: only opacity is animated so the per-placement positioning
-// transforms (translateX / translateY) are never overridden.
 .atom-tooltip-enter-active,
 .atom-tooltip-leave-active {
   transition: opacity 0.18s ease;
