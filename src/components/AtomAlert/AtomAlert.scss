@@ -77,7 +77,10 @@
     transition: opacity $transition-fast;
     margin-top: 1px;
 
-    &:hover { opacity: 1; }
+    @media (hover: hover) and (pointer: fine) {
+      &:hover { opacity: 1; }
+    }
+    &:active { opacity: 1; }
 
     svg { display: block; }
   }

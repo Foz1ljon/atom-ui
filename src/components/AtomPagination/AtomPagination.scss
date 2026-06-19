@@ -30,9 +30,11 @@
     font-size: $font-sm;
     line-height: 1;
 
-    &:hover:not(:disabled) {
-      border-color: $color-primary;
-      color: $color-primary;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover:not(:disabled) {
+        border-color: $color-primary;
+        color: $color-primary;
+      }
     }
 
     &:disabled {
@@ -46,7 +48,9 @@
       color: $color-white;
       font-weight: 600;
 
-      &:hover { background: $color-primary-hover; border-color: $color-primary-hover; color: $color-white; }
+      @media (hover: hover) and (pointer: fine) {
+        &:hover { background: $color-primary-hover; border-color: $color-primary-hover; color: $color-white; }
+      }
     }
 
     &--ellipsis {
@@ -56,7 +60,9 @@
       letter-spacing: 1px;
       color: $color-gray-400;
 
-      &:hover { border-color: transparent; color: $color-gray-400; }
+      @media (hover: hover) and (pointer: fine) {
+        &:hover { border-color: transparent; color: $color-gray-400; }
+      }
     }
   }
 

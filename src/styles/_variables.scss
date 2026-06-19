@@ -8,82 +8,82 @@
 // ──────────────────────────────────────────────────────────────
 
 // Brand colors (static)
-$color-primary:           #2563eb;
-$color-primary-hover:     #1d4ed8;
-$color-primary-active:    #1e40af;
-$color-primary-text:      #fff;
+$color-primary: #2563eb;
+$color-primary-hover: #1d4ed8;
+$color-primary-active: #1e40af;
+$color-primary-text: #fff;
 
 // Secondary (themed — used as neutral button/surface fills)
-$color-secondary:         var(--atom-secondary, #f3f4f6);
-$color-secondary-hover:   var(--atom-secondary-hover, #e5e7eb);
-$color-secondary-active:  var(--atom-secondary-active, #d1d5db);
-$color-secondary-text:    var(--atom-secondary-text, #111827);
-$color-secondary-border:  var(--atom-secondary-border, #e5e7eb);
+$color-secondary: var(--atom-secondary, #f3f4f6);
+$color-secondary-hover: var(--atom-secondary-hover, #e5e7eb);
+$color-secondary-active: var(--atom-secondary-active, #d1d5db);
+$color-secondary-text: var(--atom-secondary-text, #111827);
+$color-secondary-border: var(--atom-secondary-border, #e5e7eb);
 
-$color-danger:            #dc2626;
-$color-danger-hover:      #b91c1c;
-$color-danger-active:     #991b1b;
-$color-danger-text:       #fff;
-$color-danger-light:      #fef2f2;
-$color-danger-border:     #fecaca;
-$color-danger-text-dark:  #991b1b;
+$color-danger: #dc2626;
+$color-danger-hover: #b91c1c;
+$color-danger-active: #991b1b;
+$color-danger-text: #fff;
+$color-danger-light: #fef2f2;
+$color-danger-border: #fecaca;
+$color-danger-text-dark: #991b1b;
 
-$color-success:           #16a34a;
-$color-success-hover:     #15803d;
-$color-success-active:    #166534;
-$color-success-text:      #fff;
-$color-success-light:     #f0fdf4;
-$color-success-border:    #bbf7d0;
+$color-success: #16a34a;
+$color-success-hover: #15803d;
+$color-success-active: #166534;
+$color-success-text: #fff;
+$color-success-light: #f0fdf4;
+$color-success-border: #bbf7d0;
 $color-success-text-dark: #166534;
 
-$color-warning:           #d97706;
-$color-warning-hover:     #b45309;
-$color-warning-active:    #92400e;
-$color-warning-text:      #fff;
-$color-warning-light:     #fffbeb;
-$color-warning-border:    #fde68a;
+$color-warning: #d97706;
+$color-warning-hover: #b45309;
+$color-warning-active: #92400e;
+$color-warning-text: #fff;
+$color-warning-light: #fffbeb;
+$color-warning-border: #fde68a;
 $color-warning-text-dark: #92400e;
 
-$color-info:              #0891b2;
-$color-info-hover:        #0e7490;
-$color-info-active:       #155e75;
-$color-info-text:         #fff;
-$color-info-light:        #ecfeff;
-$color-info-border:       #a5f3fc;
-$color-info-text-dark:    #155e75;
+$color-info: #0891b2;
+$color-info-hover: #0e7490;
+$color-info-active: #155e75;
+$color-info-text: #fff;
+$color-info-light: #ecfeff;
+$color-info-border: #a5f3fc;
+$color-info-text-dark: #155e75;
 
 // Surface — component background (flips in dark mode)
-$color-surface:   var(--atom-surface, #ffffff);
+$color-surface: var(--atom-surface, #ffffff);
 
 // Always-white foreground (text/border on colored fills — does NOT flip)
-$color-white:     #ffffff;
+$color-white: #ffffff;
 
 // Neutrals (themed — text, borders, subtle backgrounds)
-$color-gray-50:   var(--atom-gray-50,  #f9fafb);
-$color-gray-100:  var(--atom-gray-100, #f3f4f6);
-$color-gray-200:  var(--atom-gray-200, #e5e7eb);
-$color-gray-300:  var(--atom-gray-300, #d1d5db);
-$color-gray-400:  var(--atom-gray-400, #9ca3af);
-$color-gray-500:  var(--atom-gray-500, #6b7280);
-$color-gray-600:  var(--atom-gray-600, #4b5563);
-$color-gray-700:  var(--atom-gray-700, #374151);
-$color-gray-800:  var(--atom-gray-800, #1f2937);
-$color-gray-900:  var(--atom-gray-900, #111827);
+$color-gray-50: var(--atom-gray-50, #f9fafb);
+$color-gray-100: var(--atom-gray-100, #f3f4f6);
+$color-gray-200: var(--atom-gray-200, #e5e7eb);
+$color-gray-300: var(--atom-gray-300, #d1d5db);
+$color-gray-400: var(--atom-gray-400, #9ca3af);
+$color-gray-500: var(--atom-gray-500, #6b7280);
+$color-gray-600: var(--atom-gray-600, #4b5563);
+$color-gray-700: var(--atom-gray-700, #374151);
+$color-gray-800: var(--atom-gray-800, #1f2937);
+$color-gray-900: var(--atom-gray-900, #111827);
 
 // Border radius
-$radius-xs:   4px;
-$radius-sm:   8px;
-$radius-md:   12px;
-$radius-lg:   16px;
-$radius-xl:   24px;
+$radius-xs: 4px;
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 24px;
 $radius-full: 9999px;
 
 // Font sizes
-$font-xs:  12px;
-$font-sm:  13px;
-$font-md:  14px;
-$font-lg:  15px;
-$font-xl:  16px;
+$font-xs: 12px;
+$font-sm: 13px;
+$font-md: 14px;
+$font-lg: 15px;
+$font-xl: 16px;
 
 // Component heights
 $height-sm: 34px;
@@ -96,12 +96,12 @@ $transition-fast: 0.15s ease;
 $transition-slow: 0.35s ease;
 
 // Shadows (themed — deeper in dark mode)
-$shadow-sm:  var(--atom-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04));
-$shadow-md:  var(--atom-shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06));
-$shadow-lg:  var(--atom-shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.08));
-$shadow-xl:  var(--atom-shadow-xl, 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1));
+$shadow-sm: var(--atom-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04));
+$shadow-md: var(--atom-shadow-md, 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06));
+$shadow-lg: var(--atom-shadow-lg, 0 10px 30px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.08));
+$shadow-xl: var(--atom-shadow-xl, 0 20px 40px rgba(0, 0, 0, 0.15), 0 8px 16px rgba(0, 0, 0, 0.1));
 
 // Z-index
 $z-dropdown: 100;
-$z-modal:    1000;
-$z-tooltip:  1100;
+$z-modal: 1000;
+$z-tooltip: 1100;

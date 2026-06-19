@@ -29,6 +29,18 @@
   white-space: nowrap;
 }
 
+// Apply hover styles only on devices that truly support hovering (desktop).
+// On touch screens (mobile/tablet) the rule is skipped so styles never
+// "stick" after a tap — use :active for touch feedback instead.
+// Pass a suffix to extend the selector, e.g. @include hover(':not(:disabled)').
+@mixin hover($suffix: '') {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover#{$suffix} {
+      @content;
+    }
+  }
+}
+
 @mixin size-component($size) {
   @if $size == sm {
     min-height: $height-sm;

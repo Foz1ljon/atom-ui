@@ -10,6 +10,8 @@ export interface AtomDrawerProps {
   mask?: boolean;
   maskClosable?: boolean;
   destroyOnClose?: boolean;
+  /** Allow closing by swiping the panel toward its edge on touch devices. */
+  swipeToClose?: boolean;
 }
 
 export interface AtomDrawerEmits {

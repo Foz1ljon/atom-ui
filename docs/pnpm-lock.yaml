@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       atom-ui-vue:
-        specifier: ^0.1.8
-        version: 0.1.8(vue@3.5.31)
+        specifier: link:..
+        version: link:..
     devDependencies:
       vitepress:
         specifier: ^1.6.4
@@ -569,12 +569,6 @@ packages:
   algoliasearch@5.50.0:
     resolution: {integrity: sha512-yE5I83Q2s8euVou8Y3feXK08wyZInJWLYXgWO6Xti9jBUEZAGUahyeQ7wSZWkifLWVnQVKEz5RAmBlXG5nqxog==}
     engines: {node: '>= 14.0.0'}
-
-  atom-ui-vue@0.1.8:
-    resolution: {integrity: sha512-Mnw/p7mN676YUB7WTKbXmOZqCHbkNQozJT+6YfprzeifpqX341PZPIHYuBYIXcoSHJSlfSxDJxHYEKJ4/UX53g==}
-    engines: {node: '>=16.0.0'}
-    peerDependencies:
-      vue: ^3.0.0
 
   birpc@2.9.0:
     resolution: {integrity: sha512-KrayHS5pBi69Xi9JmvoqrIgYGDkD6mcSe/i6YKi3w5kekCLzrX4+nawcXqrj2tIp50Kw/mT/s3p+GVK0A0sKxw==}
@@ -1308,10 +1302,6 @@ snapshots:
       '@algolia/requester-browser-xhr': 5.50.0
       '@algolia/requester-fetch': 5.50.0
       '@algolia/requester-node-http': 5.50.0
-
-  atom-ui-vue@0.1.8(vue@3.5.31):
-    dependencies:
-      vue: 3.5.31
 
   birpc@2.9.0: {}
 

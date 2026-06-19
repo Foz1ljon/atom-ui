@@ -1,5 +1,6 @@
 allowBuilds:
   esbuild: true
-minimumReleaseAgeExclude:
-  - atom-ui-vue@0.1.7
-  - atom-ui-vue@0.1.8
+# Docs consumes the library via a local "link:.." dependency, so the
+# supply-chain release-age gate (which only matters for freshly published
+# npm packages) is unnecessary friction here — disable it.
+minimumReleaseAge: 0

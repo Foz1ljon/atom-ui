@@ -24,7 +24,9 @@
     opacity 0.2s ease;
   box-shadow: var(--btn-shadow);
 
-  &:hover { background: var(--btn-hover-bg); }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover { background: var(--btn-hover-bg); }
+  }
 
   &:active {
     background: var(--btn-active-bg);

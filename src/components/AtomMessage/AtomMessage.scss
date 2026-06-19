@@ -68,7 +68,10 @@
     align-items: center;
     transition: color $transition-base;
 
-    &:hover { color: $color-gray-700; }
+    @media (hover: hover) and (pointer: fine) {
+      &:hover { color: $color-gray-700; }
+    }
+    &:active { color: $color-gray-700; }
   }
 }
 

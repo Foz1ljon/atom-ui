@@ -83,7 +83,13 @@
     flex-shrink: 0;
     line-height: 1;
 
-    &:hover {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: $color-gray-200;
+        color: $color-gray-900;
+      }
+    }
+    &:active {
       background: $color-gray-200;
       color: $color-gray-900;
     }
@@ -170,7 +176,9 @@
       cursor: pointer;
       transition: background $transition-fast;
 
-      &:hover { background: $color-primary-hover; }
+      @media (hover: hover) and (pointer: fine) {
+        &:hover { background: $color-primary-hover; }
+      }
     }
 
     &-cancel {
@@ -185,7 +193,9 @@
       cursor: pointer;
       transition: background $transition-fast;
 
-      &:hover { background: $color-gray-200; }
+      @media (hover: hover) and (pointer: fine) {
+        &:hover { background: $color-gray-200; }
+      }
     }
   }
 

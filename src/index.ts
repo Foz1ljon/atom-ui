@@ -21,6 +21,9 @@ import { AtomSidebar, AtomSidebarItem } from "./components/AtomSidebar/";
 import { AtomTooltip } from "./components/AtomTooltip/";
 import { AtomMessage } from "./components/AtomMessage/";
 import { AtomTextarea } from "./components/AtomTextarea/";
+import { AtomFileUpload } from "./components/AtomFileUpload/";
+import { AtomVirtualList } from "./components/AtomVirtualList/";
+import { AtomNumberInput } from "./components/AtomNumberInput/";
 
 export * from "./components/AtomButton";
 export * from "./components/AtomInput";
@@ -43,6 +46,9 @@ export * from "./components/AtomSidebar";
 export * from "./components/AtomTooltip";
 export * from "./components/AtomMessage";
 export * from "./components/AtomTextarea";
+export * from "./components/AtomFileUpload";
+export * from "./components/AtomVirtualList";
+export * from "./components/AtomNumberInput";
 
 // Composables
 export * from "./composables";
@@ -72,6 +78,9 @@ export {
   AtomTooltip,
   AtomMessage,
   AtomTextarea,
+  AtomFileUpload,
+  AtomVirtualList,
+  AtomNumberInput,
 };
 
 const components = [
@@ -99,6 +108,9 @@ const components = [
   AtomTooltip,
   AtomMessage,
   AtomTextarea,
+  AtomFileUpload,
+  AtomVirtualList,
+  AtomNumberInput,
 ];
 
 export const install = (app: App) => {

@@ -1,0 +1,104 @@
+@use "../../styles/variables" as *;
+
+.atom-number-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+
+  &__label {
+    font-size: $font-sm;
+    font-weight: 500;
+    color: $color-gray-700;
+    line-height: 1.4;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    background: $color-surface;
+    border: 1.5px solid $color-gray-200;
+    border-radius: $radius-md;
+    overflow: hidden;
+    transition: border-color $transition-base, box-shadow $transition-base;
+
+    &:focus-within {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba($color-primary, 0.12);
+    }
+
+    &--error {
+      border-color: $color-danger;
+      &:focus-within {
+        border-color: $color-danger;
+        box-shadow: 0 0 0 3px rgba($color-danger, 0.12);
+      }
+    }
+
+    &--disabled {
+      background: $color-gray-50;
+      cursor: not-allowed;
+      .atom-number-input__field { cursor: not-allowed; color: $color-gray-400; }
+    }
+
+    // Sizes
+    &--sm { min-height: $height-sm; border-radius: $radius-sm;
+      .atom-number-input__field { font-size: $font-sm; } }
+    &--md { min-height: $height-md;
+      .atom-number-input__field { font-size: $font-md; } }
+    &--lg { min-height: $height-lg;
+      .atom-number-input__field { font-size: $font-lg; } }
+  }
+
+  &__field {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: $color-gray-900;
+    padding: 0 12px;
+    text-align: center;
+    width: 100%;
+
+    &::placeholder { color: $color-gray-400; }
+
+    // Hide native number spinners (not used, but safe if type changes)
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  }
+
+  &__affix {
+    color: $color-gray-400;
+    font-size: $font-sm;
+    padding: 0 2px;
+    flex-shrink: 0;
+    user-select: none;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    align-self: stretch;
+    border: none;
+    background: $color-gray-50;
+    color: $color-gray-600;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background $transition-fast, color $transition-fast;
+
+    &--dec { border-right: 1px solid $color-gray-200; }
+    &--inc { border-left: 1px solid $color-gray-200; }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover:not(:disabled) { background: $color-gray-100; color: $color-primary; }
+    }
+    &:active:not(:disabled) { background: $color-gray-200; color: $color-primary; }
+
+    &:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    svg { display: block; }
+  }
+}

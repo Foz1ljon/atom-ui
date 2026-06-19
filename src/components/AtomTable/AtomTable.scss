@@ -42,8 +42,10 @@
       cursor: pointer;
       user-select: none;
 
-      &:hover {
-        color: $color-primary;
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: $color-primary;
+        }
       }
     }
   }
@@ -100,8 +102,13 @@
     background: $color-gray-50;
   }
 
-  &--hoverable &__tr:hover {
-    background: rgba($color-primary, 0.04);
+  @media (hover: hover) and (pointer: fine) {
+    &--hoverable &__tr:hover {
+      background: rgba($color-primary, 0.04);
+    }
+  }
+  &--hoverable &__tr:active {
+    background: rgba($color-primary, 0.06);
   }
 
   &--row-clickable &__tr {

@@ -47,8 +47,10 @@
     }
   }
 
-  &:not(&--disabled):hover &__dot {
-    border-color: $color-primary;
+  @media (hover: hover) and (pointer: fine) {
+    &:not(&--disabled):hover &__dot {
+      border-color: $color-primary;
+    }
   }
 
   &__label {
@@ -109,8 +111,10 @@
         .atom-radio__label { color: $color-white; }
       }
 
-      &:not(&--disabled):hover:not(&--checked) {
-        background: $color-gray-100;
+      @media (hover: hover) and (pointer: fine) {
+        &:not(&--disabled):hover:not(&--checked) {
+          background: $color-gray-100;
+        }
       }
     }
   }

@@ -27,9 +27,11 @@
     cursor: pointer;
     transition: box-shadow $transition-base, transform $transition-base;
 
-    &:hover {
-      box-shadow: $shadow-lg;
-      transform: translateY(-2px);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        box-shadow: $shadow-lg;
+        transform: translateY(-2px);
+      }
     }
 
     &:active {

@@ -137,7 +137,10 @@
     transition: color $transition-fast;
     line-height: 1;
 
-    &:hover { color: $color-gray-600; }
+    @media (hover: hover) and (pointer: fine) {
+      &:hover { color: $color-gray-600; }
+    }
+    &:active { color: $color-gray-600; }
 
     svg { display: block; }
   }
